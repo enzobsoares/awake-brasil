@@ -8,39 +8,40 @@ import './globals.css'
 
 const inter = Inter({ 
   subsets: ["latin"],
-  variable: '--font-sans'
+  variable: '--font-sans',
+  display: 'swap',
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-serif'
+  variable: '--font-serif',
+  display: 'swap',
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: '--font-jakarta'
+  variable: '--font-jakarta',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Grupo Awake Brasil | Gestão Imobiliária',
-  description: 'Excelência em gestão e administração de propriedade imobiliária',
-  generator: 'v0.app',
+  title: {
+    default: 'Grupo Awake Brasil | Inteligência em Ativos Imobiliários',
+    template: '%s | Grupo Awake Brasil'
+  },
+  description: 'Especialistas em gestão, administração e estruturação de ativos imobiliários. Segurança, governança e visão estratégica para investidores e instituições.',
+  keywords: [
+    'Gestão Imobiliária', 
+    'Investimentos', 
+    'Leilões de Imóveis', 
+    'Asset Management', 
+    'Grupo Awake', 
+    'Fundos Imobiliários'
+  ],
+  authors: [{ name: 'Grupo Awake Brasil' }],
+  // Configuração limpa de ícone
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico', 
   },
 }
 
@@ -50,8 +51,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+    <html lang="pt-BR" className="scroll-smooth">
+      <body 
+        className={`
+          ${inter.variable} 
+          ${playfair.variable} 
+          ${plusJakartaSans.variable} 
+          font-sans antialiased 
+          bg-slate-50 text-slate-900
+        `}
+      >
         <Header />
         <main className="min-h-screen">
           {children}
