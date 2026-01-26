@@ -1,8 +1,19 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Shield, TrendingUp, Eye, Users, CheckCircle2, ArrowRight } from 'lucide-react'
+import { 
+  Shield, 
+  TrendingUp, 
+  Eye, 
+  Users, 
+  CheckCircle2, 
+  ArrowRight, 
+  BarChart3, 
+  FileText, 
+  PieChart, 
+  Landmark,
+  Briefcase
+} from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,318 +33,339 @@ const staggerChildren = {
 }
 
 export default function InvestidorPage() {
-  const whyAwake = [
+  
+  const whyInvest = [
     {
-      icon: Shield,
-      title: 'Segurança',
-      description: 'Due diligence rigorosa e gestão de risco em todas as operações.',
+      title: 'Acesso a Oportunidades Selecionadas',
+      description: 'Imóveis previamente avaliados com potencial de valorização e geração de renda.',
+      icon: Eye
     },
     {
-      icon: TrendingUp,
-      title: 'ROI Consistente',
-      description: 'Histórico comprovado de retornos acima da média do mercado.',
+      title: 'Estrutura Nacional',
+      description: 'Captação de ativos em diversas regiões do país, ampliando o universo de oportunidades.',
+      icon: Landmark
     },
     {
-      icon: Eye,
-      title: 'Visão Estratégica',
-      description: 'Identificação de oportunidades antes do mercado geral.',
+      title: 'Gestão Profissional Completa',
+      description: 'Do arremate à monetização (locação, revenda ou valorização), cuidamos de tudo.',
+      icon: Briefcase
     },
     {
-      icon: Users,
-      title: 'Gestão Ativa',
-      description: 'Acompanhamento constante e otimização do portfólio.',
+      title: 'Transparência Plena',
+      description: 'Relatórios periódicos, governança e conformidade rigorosa em cada operação.',
+      icon: FileText
     },
+    {
+      title: 'Mitigação de Riscos',
+      description: 'Atuação com padrões técnicos e jurídicos que garantem segurança na aquisição.',
+      icon: Shield
+    }
   ]
 
-  const investmentModels = [
-    {
-      title: 'Investidor Conservador',
-      subtitle: 'Foco em Segurança',
-      features: [
-        'Propriedades com documentação impecável',
-        'Localizações consolidadas',
-        'Retorno previsível e estável',
-        'Baixa volatilidade',
-      ],
-      returnRange: '8-12% a.a.',
-    },
-    {
-      title: 'Investidor Moderado',
-      subtitle: 'Equilíbrio Risco-Retorno',
-      features: [
-        'Mix de propriedades estabelecidas e em valorização',
-        'Diversificação regional',
-        'Potencial de valorização média',
-        'Liquidez moderada',
-      ],
-      returnRange: '12-18% a.a.',
-    },
-    {
-      title: 'Investidor Arrojado',
-      subtitle: 'Alto Potencial',
-      features: [
-        'Oportunidades de alto potencial de valorização',
-        'Propriedades em áreas em desenvolvimento',
-        'Estratégias de repositioning',
-        'Horizonte de investimento estendido',
-      ],
-      returnRange: '18-30% a.a.',
-    },
+  const idealProfile = [
+    'Investidor individual ou institucional buscando diversificação fora da renda fixa/variável tradicional.',
+    'Fundo de investimento ou gestor de patrimônio que requer governança e escala.',
+    'Perfil com horizonte de médio a longo prazo e foco em ativos tangíveis.'
   ]
 
-  const benefits = [
-    'Acesso a dealflow exclusivo de propriedades',
-    'Análise técnica e jurídica completa',
-    'Gestão profissional pós-aquisição',
-    'Relatórios mensais detalhados',
-    'Portal do investidor com acompanhamento em tempo real',
-    'Equipe dedicada de relacionamento',
-    'Opções de exit strategy estruturadas',
-    'Suporte tributário e contábil',
+  const modalities = [
+    'Aquisição direta de imóveis de leilão com gestão completa da Awake Brasil.',
+    'Participação em operações estruturadas ou veículos de investimento.',
+    'Acompanhamento contínuo com relatórios e previsões de monetização.'
+  ]
+
+  const processSteps = [
+    {
+      number: '01',
+      title: 'Contato Inicial',
+      desc: 'Análise de perfil, capital disponível e objetivos.'
+    },
+    {
+      number: '02',
+      title: 'Seleção',
+      desc: 'Apresentação de portfólio com critérios técnicos avalizados.'
+    },
+    {
+      number: '03',
+      title: 'Aquisição',
+      desc: 'Arrematação, regularização e estruturação da estratégia.'
+    },
+    {
+      number: '04',
+      title: 'Gestão',
+      desc: 'Monitoramento contínuo, manutenção e relatórios periódicos.'
+    },
+    {
+      number: '05',
+      title: 'Monetização',
+      desc: 'Saída planejada ou manutenção da locação com prestação de contas.'
+    }
+  ]
+
+  const testimonials = [
+    {
+      quote: "A parceria com a Awake Brasil permitiu que eu acessasse oportunidades que, sozinho, teriam sido inviáveis. A gestão realizada trouxe tranquilidade e resultados mensuráveis.",
+      author: "Investidor Privado",
+      location: "São Paulo, SP"
+    },
+    {
+      quote: "Fizemos uma operação estruturada que atendeu nossos critérios: investimento direto, prazo definido e acompanhamento especializado. A Awake Brasil se demonstrou parceira estratégica.",
+      author: "Fundo de Investimento",
+      location: "Curitiba, PR"
+    }
   ]
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-cyan-500/30 pt-16">
       
       {/* 1. HERO SECTION */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] overflow-hidden text-center">
+      <section className="relative py-24 lg:py-32 bg-[#0f172a] text-center overflow-hidden">
         <div className="absolute inset-0 opacity-20">
              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale mix-blend-overlay" />
              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/90 to-transparent" />
         </div>
         
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div {...fadeInUp} className="max-w-4xl mx-auto space-y-6">
-            <span className="inline-block py-1 px-3 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold tracking-widest uppercase">
+        <div className="relative z-10 container mx-auto px-4">
+          <motion.div {...fadeInUp} className="max-w-5xl mx-auto space-y-6">
+            <span className="inline-block py-1 px-3 border border-cyan-500/30 bg-cyan-900/30 text-cyan-400 text-xs font-bold uppercase tracking-widest rounded-full">
               Área do Investidor
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight text-balance">
-              Seja um Investidor
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
+              Invista com segurança, <br/> estratégia e <span className="text-cyan-500">respaldo institucional.</span>
             </h1>
-            <p className="text-xl text-slate-300 text-pretty leading-relaxed font-medium max-w-2xl mx-auto">
-              Transforme seu capital em ativos imobiliários estratégicos com a segurança 
-              e expertise de quem é líder em gestão patrimonial.
+            <p className="text-xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
+              Descubra como a Awake Brasil estrutura oportunidades de investimento em imóveis
+              provenientes de leilões, com gestão profissional e foco em resultados.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-10 h-14 text-lg font-bold shadow-lg shadow-cyan-900/50 transition-all hover:scale-105" asChild>
-                 <Link href="/contato">Fale com um Consultor</Link>
-              </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. VISÃO GERAL (Texto Corrido) */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <motion.div 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">
+              Oportunidade de Diversificação e Performance
+            </h2>
+            <div className="text-lg text-slate-600 leading-relaxed space-y-6">
+              <p>
+                No atual cenário econômico, investir em ativos imobiliários via leilões judiciais e
+                extrajudiciais representa uma alternativa diferenciada de diversificação de portfólio. A
+                Awake Brasil identifica, avalia e estrutura essas oportunidades com o compromisso de
+                transparência, rigor técnico e performance.
+              </p>
+              <p className="font-medium text-slate-800">
+                Aqui encontrará uma jornada de investimento cuidadosamente concebida para oferecer
+                não apenas acesso a imóveis de leilão, mas a ativos geridos de forma proativa, com
+                acompanhamento especializado em todas as etapas.
+              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. POR QUE INVESTIR (Why Awake) */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             className="text-center mb-16 max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Por Que Investir com a Awake?
-            </h2>
-            <p className="text-lg text-slate-600">
-              A combinação perfeita entre segurança institucional e retornos atrativos
-            </p>
-          </motion.div>
+      {/* 3. POR QUE INVESTIR (Grid de Benefícios) */}
+      <section className="py-24 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Por que investir conosco?</h2>
+            <p className="text-lg text-slate-600">Diferenciais que garantem segurança e retorno.</p>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyAwake.map((item, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyInvest.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 border border-slate-200 hover:border-cyan-500 transition-all duration-300 group shadow-sm hover:shadow-lg rounded-sm"
               >
-                <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-slate-200 bg-white h-full">
-                  <CardContent className="p-8 space-y-4 text-center">
-                    <div className="mx-auto w-16 h-16 rounded-lg bg-cyan-100 flex items-center justify-center group-hover:bg-cyan-700 transition-colors duration-300">
-                      <item.icon className="h-8 w-8 text-cyan-700 group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. MODELOS DE INVESTIMENTO (Investment Models) */}
-      <section className="py-24 bg-slate-50 border-y border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Modelos de Investimento
-            </h2>
-            <p className="text-lg text-slate-600">
-              Estruturas personalizadas para cada perfil e objetivo
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {investmentModels.map((model, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className={`relative group bg-white rounded-lg border ${index === 1 ? 'border-cyan-500 shadow-2xl scale-105 z-10' : 'border-slate-200 hover:shadow-xl hover:border-cyan-300'} transition-all duration-300`}
-              >
-                {index === 1 && (
-                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-                      Mais Popular
-                   </div>
-                )}
-                <div className="p-8 space-y-6">
-                  <div className="space-y-2 text-center">
-                    <h3 className="text-2xl font-bold text-slate-900">
-                      {model.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 font-medium uppercase tracking-wide">
-                      {model.subtitle}
-                    </p>
-                  </div>
-                  
-                  <div className="py-4 px-6 rounded-lg bg-slate-50 text-center border border-slate-100">
-                    <div className="text-xs text-slate-500 uppercase tracking-wider mb-1 font-semibold">
-                      Retorno Projetado
-                    </div>
-                    <div className="text-3xl font-bold text-cyan-700">
-                      {model.returnRange}
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 pt-2">
-                    {model.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start gap-3 text-sm text-slate-600">
-                        <CheckCircle2 className="h-5 w-5 text-cyan-500 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button
-                    className={`w-full h-12 text-base font-bold rounded-sm mt-4 ${index === 1 ? 'bg-cyan-700 hover:bg-cyan-800 text-white' : 'bg-white border-2 border-slate-200 hover:border-cyan-600 hover:text-cyan-700 text-slate-700'}`}
-                    variant="ghost"
-                  >
-                    Saiba Mais
-                  </Button>
+                <div className="w-12 h-12 bg-cyan-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-600 transition-colors">
+                  <item.icon className="h-6 w-6 text-cyan-700 group-hover:text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
-
-          <p className="text-center text-xs text-slate-400 mt-12 max-w-2xl mx-auto italic">
-            * Retornos projetados baseados em desempenho histórico e análise de mercado. Rentabilidade passada não garante resultados futuros. Consulte o prospecto de cada oportunidade.
-          </p>
         </div>
       </section>
 
-      {/* 4. BENEFÍCIOS E SEGURANÇA (Split Screen) */}
+      {/* 4. PERFIL E MODALIDADES (Split Cards) */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
             
+            {/* Card Perfil */}
             <motion.div 
                initial={{ opacity: 0, x: -30 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="space-y-8"
+               className="bg-[#0f172a] text-white p-10 rounded-sm"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-800 text-sm font-bold">
-                <Shield className="h-4 w-4" />
-                Suporte Completo
-              </div>
-              
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 text-balance leading-tight">
-                Investir com Segurança e Transparência
-              </h2>
-              
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Quando você investe com o Grupo Awake Brasil, você não está apenas 
-                comprando propriedades – você está adquirindo uma parceria estratégica 
-                com especialistas dedicados ao sucesso do seu investimento.
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-2 text-sm text-slate-700 font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0" />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
-              </div>
+               <div className="flex items-center gap-3 mb-8">
+                 <Users className="text-cyan-400 h-8 w-8" />
+                 <h3 className="text-2xl font-bold">Perfil do Investidor Ideal</h3>
+               </div>
+               <p className="text-slate-400 mb-8 leading-relaxed">
+                 A Awake Brasil atende investidores que desejam aplicar capital com estratégia clara, prazo definido e acompanhamento profissional.
+               </p>
+               <ul className="space-y-6">
+                 {idealProfile.map((item, i) => (
+                   <li key={i} className="flex gap-4">
+                     <CheckCircle2 className="h-6 w-6 text-cyan-500 shrink-0 mt-1" />
+                     <span className="text-slate-200">{item}</span>
+                   </li>
+                 ))}
+               </ul>
             </motion.div>
-            
-            <motion.div
+
+            {/* Card Modalidades */}
+            <motion.div 
                initial={{ opacity: 0, x: 30 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="relative h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl"
+               className="bg-slate-50 border border-slate-200 p-10 rounded-sm"
             >
-              <Image 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
-                alt="Dashboard de Investimentos"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/80 to-transparent" />
-              <div className="absolute bottom-8 left-8 text-white max-w-sm">
-                 <p className="font-bold text-lg border-l-4 border-cyan-500 pl-4">Tecnologia para acompanhar seu patrimônio em tempo real.</p>
-              </div>
+               <div className="flex items-center gap-3 mb-8">
+                 <PieChart className="text-cyan-700 h-8 w-8" />
+                 <h3 className="text-2xl font-bold text-slate-900">Modalidades Disponíveis</h3>
+               </div>
+               <p className="text-slate-600 mb-8 leading-relaxed">
+                 Flexibilidade para diferentes estratégias de alocação de capital e objetivos de retorno.
+               </p>
+               <ul className="space-y-6">
+                 {modalities.map((item, i) => (
+                   <li key={i} className="flex gap-4">
+                     <div className="h-2 w-2 bg-cyan-600 rounded-full mt-2.5 shrink-0" />
+                     <span className="text-slate-700 font-medium">{item}</span>
+                   </li>
+                 ))}
+               </ul>
             </motion.div>
 
           </div>
         </div>
       </section>
 
-      {/* 5. CTA */}
+      {/* 5. PROCESSO DE INVESTIMENTO (Horizontal Step) */}
+      <section className="py-24 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900">Processo de Investimento</h2>
+            <p className="text-slate-600 mt-2">Uma jornada estruturada em 5 etapas</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative bg-white p-6 border-t-4 border-cyan-500 shadow-sm hover:shadow-md transition-shadow text-center group"
+              >
+                <div className="text-4xl font-bold text-slate-200 mb-4 font-mono group-hover:text-cyan-100 transition-colors">
+                  {step.number}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. GOVERNANÇA E TRANSPARÊNCIA */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+             <div className="relative h-[400px] bg-slate-100 rounded-lg overflow-hidden">
+                <Image 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Governança e Dados" 
+                  fill 
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-cyan-900/10 mix-blend-multiply" />
+             </div>
+             
+             <div>
+               <h2 className="text-3xl font-bold text-slate-900 mb-6">Indicadores, Transparência e Governança</h2>
+               <p className="text-lg text-slate-600 mb-8">
+                 Investir com confiança exige visibilidade e dados concretos. A Awake Brasil disponibiliza:
+               </p>
+               <ul className="space-y-4">
+                 <li className="flex gap-4">
+                   <BarChart3 className="text-cyan-600 h-6 w-6 shrink-0" />
+                   <span className="text-slate-700">Relatórios periódicos com evolução do ativo, valorização e ocupação.</span>
+                 </li>
+                 <li className="flex gap-4">
+                   <FileText className="text-cyan-600 h-6 w-6 shrink-0" />
+                   <span className="text-slate-700">Governança documental clara e auditoria interna/externa quando aplicável.</span>
+                 </li>
+                 <li className="flex gap-4">
+                   <Shield className="text-cyan-600 h-6 w-6 shrink-0" />
+                   <span className="text-slate-700">Práticas de compliance e gestão de risco conforme requisitos jurídicos.</span>
+                 </li>
+               </ul>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. DEPOIMENTOS (Dark Section) */}
       <section className="py-24 bg-[#1e293b] text-white text-center">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-16">Resultados Reais</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-sm relative">
+                <p className="text-lg text-slate-300 italic mb-6">"{t.quote}"</p>
+                <div>
+                  <p className="font-bold text-white">{t.author}</p>
+                  <p className="text-sm text-cyan-400">{t.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CTA FINAL */}
+      <section className="py-24 bg-white text-center">
+        <div className="container mx-auto px-4 max-w-4xl">
           <motion.div {...fadeInUp} className="space-y-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-              Pronto para Começar a Investir?
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+              Pronto para estruturar seu capital?
             </h2>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto text-pretty leading-relaxed font-medium">
-              Agende uma conversa com um de nossos consultores de investimentos e 
-              descubra como podemos ajudá-lo a construir um portfólio imobiliário 
-              sólido e rentável.
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
+              Entre em contato conosco ou solicite acesso ao nosso portfólio de oportunidades reais.
             </p>
             
-            <div className="pt-6">
-              <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-12 h-14 text-lg font-bold shadow-lg shadow-cyan-900/50 transition-all hover:scale-105" asChild>
-                 <Link href="/contato">Fale com um Consultor de Investimentos</Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 flex-wrap">
+              <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white font-bold h-14 px-10 rounded-none shadow-lg" asChild>
+                 <Link href="/contato">Quero Investir</Link>
               </Button>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm text-slate-400 font-medium">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-                <span>Sem compromisso</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-                <span>Análise gratuita</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-                <span>Resposta em 24h</span>
-              </div>
+              <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 font-bold h-14 px-10 rounded-none" asChild>
+                 <Link href="/contato">Solicitar Portfólio</Link>
+              </Button>
+              <Button size="lg" variant="secondary" className="bg-slate-900 text-white hover:bg-slate-800 font-bold h-14 px-10 rounded-none" asChild>
+                 <Link href="/contato">Fale com um Especialista</Link>
+              </Button>
             </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -29,46 +29,32 @@ export default function ContatoPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('[v0] Form submitted:', formData)
-    // Handle form submission
+    console.log('Form submitted:', formData)
+    // Aqui você integraria com sua API de envio de email
   }
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: 'Endereço',
-      lines: [
-        'Matriz São Paulo',
-        'Av. Paulista, 1000 - Conj. 1001',
-        'Bela Vista, São Paulo - SP',
-        'CEP 01310-100',
-      ],
-    },
-    {
       icon: Phone,
-      title: 'Telefone',
+      title: 'Telefone / WhatsApp',
       lines: [
-        'São Paulo: (11) 3333-4444',
-        'Rio de Janeiro: (21) 3333-5555',
-        'WhatsApp: (11) 99999-8888',
+        'Filial SC: (48) 3209-2800',
+        'Filial SP: (11) 91698-6787',
       ],
     },
     {
       icon: Mail,
-      title: 'E-mail',
+      title: 'E-mail Corporativo',
       lines: [
-        'contato@grupoawake.com.br',
-        'investimentos@grupoawake.com.br',
-        'parceiros@grupoawake.com.br',
+        'contato@grupoawakebrasil.com',
       ],
     },
     {
       icon: Clock,
-      title: 'Horário de Atendimento',
+      title: 'Horário de Funcionamento',
       lines: [
-        'Segunda a Sexta: 9h às 18h',
-        'Sábado: 9h às 13h',
-        'Domingo: Fechado',
+        'Segunda a Sexta-feira',
+        'Das 09h às 18h',
       ],
     },
   ]
@@ -89,18 +75,17 @@ export default function ContatoPage() {
               Fale Conosco
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
-              Entre em Contato
+              Entre em Contato Conosco
             </h1>
             <p className="text-xl text-slate-300 text-pretty leading-relaxed font-medium max-w-2xl mx-auto">
-              Nossa equipe está pronta para atender você. Entre em contato e descubra 
-              como podemos ajudá-lo a alcançar seus objetivos.
+              Estamos à disposição para atendê-lo com excelência, esclarecendo dúvidas, apresentando oportunidades ou iniciando uma parceria estratégica.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* 2. MAIN CONTACT SECTION (Split Form) */}
-      <section className="py-24 bg-white relative">
+      <section className="py-24 bg-white relative" id="formulario">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             
@@ -116,8 +101,7 @@ export default function ContatoPage() {
                   Canais de Atendimento
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  Estamos aqui para responder suas perguntas e fornecer as informações 
-                  que você precisa com agilidade e eficiência.
+                  A Awake Brasil valoriza o relacionamento direto e transparente. Caso deseje obter mais informações, utilize um dos canais abaixo.
                 </p>
               </div>
 
@@ -144,6 +128,14 @@ export default function ContatoPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Botão extra para WhatsApp (opcional, mas recomendado pelo texto) */}
+              <div className="pt-4">
+                 <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-14 text-lg shadow-md" size="lg">
+                    <MessageSquare className="mr-2 h-5 w-5" />
+                    Falar no WhatsApp
+                 </Button>
+              </div>
             </motion.div>
 
             {/* Right: Contact Form */}
@@ -156,10 +148,15 @@ export default function ContatoPage() {
               <Card className="border border-slate-200 shadow-xl bg-white rounded-sm overflow-hidden">
                 <div className="h-2 w-full bg-cyan-600" />
                 <CardContent className="p-8 md:p-10">
+                  <div className="mb-8">
+                     <h3 className="text-2xl font-bold text-slate-900">Envie uma Mensagem</h3>
+                     <p className="text-slate-600 mt-2">Preencha o formulário abaixo ou envie-nos um e-mail. Retornaremos o mais breve possível.</p>
+                  </div>
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                        <div className="space-y-2">
-                         <Label htmlFor="name" className="text-slate-700 font-semibold">Nome Completo</Label>
+                         <Label htmlFor="name" className="text-slate-700 font-semibold">Nome Completo *</Label>
                          <Input
                            id="name"
                            type="text"
@@ -179,17 +176,16 @@ export default function ContatoPage() {
                            className="h-12 border-slate-300 focus:border-cyan-500 focus:ring-cyan-500"
                            value={formData.phone}
                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                           required
                          />
                        </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-slate-700 font-semibold">E-mail Corporativo</Label>
+                      <Label htmlFor="email" className="text-slate-700 font-semibold">E-mail *</Label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="seu@empresa.com.br"
+                        placeholder="seu@email.com"
                         className="h-12 border-slate-300 focus:border-cyan-500 focus:ring-cyan-500"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -198,7 +194,7 @@ export default function ContatoPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="subject" className="text-slate-700 font-semibold">Assunto</Label>
+                      <Label htmlFor="subject" className="text-slate-700 font-semibold">Assunto *</Label>
                       <Input
                         id="subject"
                         type="text"
@@ -211,7 +207,7 @@ export default function ContatoPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-slate-700 font-semibold">Mensagem</Label>
+                      <Label htmlFor="message" className="text-slate-700 font-semibold">Mensagem *</Label>
                       <Textarea
                         id="message"
                         placeholder="Descreva sua necessidade ou dúvida..."
@@ -224,13 +220,12 @@ export default function ContatoPage() {
                     </div>
 
                     <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm shadow-md transition-all hover:-translate-y-1">
-                      Enviar Mensagem
+                      Solicitar Contato
                       <Send className="ml-2 h-5 w-5" />
                     </Button>
 
                     <p className="text-xs text-slate-400 text-center mt-4">
-                      Ao enviar este formulário, você concorda com nossa Política de 
-                      Privacidade e autoriza o contato da nossa equipe.
+                      * Campos obrigatórios. Ao enviar, você concorda com nossa Política de Privacidade.
                     </p>
                   </form>
                 </CardContent>
@@ -240,6 +235,20 @@ export default function ContatoPage() {
           </div>
         </div>
       </section>
+
+      {/* 3. CTA FINAL (Chamada para Ação) */}
+      <section className="py-20 bg-slate-100 text-center border-t border-slate-200">
+         <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Prefere atendimento direto?</h2>
+            <p className="text-slate-600 mb-8">
+               Utilize nossos canais de WhatsApp ou telefone. Para solicitações de parceria, investimento ou credenciamento de agente, nossa equipe está pronta para direcioná-lo.
+            </p>
+            <Button size="lg" variant="outline" className="border-cyan-600 text-cyan-700 hover:bg-cyan-50 font-bold px-8 h-12" onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}>
+               Solicitar Contato
+            </Button>
+         </div>
+      </section>
+
     </div>
   )
 }
