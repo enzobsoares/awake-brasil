@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image' // Importação adicionada
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
@@ -14,6 +14,7 @@ export function Header() {
     { name: 'Quem Somos', href: '/quem-somos' },
     { name: 'Clientes', href: '/clientes' },
     { name: 'Leilões', href: '/leiloes' },
+    { name: 'Agente', href: '/agente' }, // <--- Novo link adicionado aqui
     { name: 'Investidor', href: '/investidor' },
     { name: 'Contato', href: '/contato' },
   ]
@@ -21,12 +22,12 @@ export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 border-b border-border/40 backdrop-blur-xl bg-background/90 supports-[backdrop-filter]:bg-background/80">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between"> {/* Altura ajustada para h-20 */}
+        <div className="flex h-20 items-center justify-between">
           
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="relative h-12 w-48"> {/* Container para o logo */}
+              <div className="relative h-12 w-48">
                 <Image 
                   src="/logoawake.png" 
                   alt="Grupo Awake Brasil" 
@@ -70,7 +71,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl absolute w-full">
+        <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl absolute w-full h-screen">
           <div className="space-y-1 px-4 pb-6 pt-4">
             {navigation.map((item) => (
               <Link
@@ -87,4 +88,4 @@ export function Header() {
       )}
     </header>
   )
-} 
+}
