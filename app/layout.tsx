@@ -2,7 +2,6 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { GoogleTagManager } from '@next/third-parties/google' // <--- 1. IMPORTAÇÃO ADICIONADA
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import './globals.css'
@@ -53,11 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      {/* 2. COMPONENTE GTM ADICIONADO AQUI
-        Ele injeta automaticamente o Script no Head e o NoScript no Body 
-      */}
-      <GoogleTagManager gtmId="GTM-MV8DP36Q" />
-
       <body 
         className={`
           ${inter.variable} 
