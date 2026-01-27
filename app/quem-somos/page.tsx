@@ -45,22 +45,22 @@ export default function QuemSomosPage() {
   const departments = [
     {
       title: 'Departamento de Análise',
-      description: 'Responsável pela triagem e viabilidade de lotes rigorosos, garantindo a segurança inicial do investimento.',
+      description: 'Responsável pela triagem e avaliação técnica e financeira de ativos imobiliários, assegurando decisões estratégicas e seguras.',
       icon: Search
     },
     {
       title: 'Equipe de Campo',
-      description: 'Realiza levantamento in-loco de ocupação, localização, estado físico e potencial construtivo dos imóveis.',
+      description: 'Realiza vistorias in loco para validação de ocupação, localização, estado físico, documentação operacional e potencial de valorização do imóvel.',
       icon: MapPin
     },
     {
-      title: 'Comercial e Vendas',
-      description: 'Estrutura o portfólio para investidores, negocia aquisições estratégicas e coordena a liquidez dos ativos.',
+      title: 'Comercial e Relacionamento',
+      description: 'Estrutura o portfólio, conduz negociações e mantém o relacionamento com investidores e parceiros, garantindo alinhamento e transparência em todas as etapas.',
       icon: TrendingUp
     },
     {
       title: 'Departamento Jurídico',
-      description: 'Especializado desde a análise processual até a emissão da carta de arrematação e regularização completa.',
+      description: 'Atua na análise jurídica e documental dos ativos, assegurando conformidade, segurança nas operações e suporte completo nos processos de regularização.',
       icon: Scale
     }
   ]
@@ -68,28 +68,28 @@ export default function QuemSomosPage() {
   const methodology = [
     {
       number: '01',
-      title: 'Prospecção Criteriosa',
-      description: 'Monitoramento nacional contínuo de leilões, identificando ativos com perfil de retorno e liquidez.',
+      title: 'Mapeamento Estratégico',
+      description: 'Monitoramento contínuo de oportunidades e ativos imobiliários alinhados ao perfil, objetivo e estratégia do investidor.',
     },
     {
       number: '02',
-      title: 'Due Diligence Rigorosa',
-      description: 'Avaliações jurídicas, documentais, mercadológicas e operacionais para mitigação de riscos.',
+      title: 'Due Diligence Completa',
+      description: 'Avaliações jurídicas, documentais, mercadológicas e operacionais para mitigação de riscos e tomada de decisão segura.',
     },
     {
       number: '03',
-      title: 'Aquisição e Estruturação',
-      description: 'Realização da arrematação, negociação de pendências e regularização documental.',
+      title: 'Estruturação e Regularização',
+      description: 'Condução integral do processo de aquisição, negociação de pendências e organização documental para viabilização do ativo.',
     },
     {
       number: '04',
-      title: 'Gestão e Monetização',
-      description: 'Desenvolvimento de planos de valorização: locação, revenda ou incorporação.',
+      title: 'Gestão e Valorização do Ativo',
+      description: 'Implementação de estratégias para valorização e performance do imóvel, com foco em locação, revenda ou otimização patrimonial.',
     },
     {
       number: '05',
-      title: 'Acompanhamento',
-      description: 'Relatórios aos investidores, compliance regulatório e suporte contínuo.',
+      title: 'Acompanhamento e Relatórios',
+      description: 'Relatórios periódicos ao investidor, governança, compliance e suporte contínuo durante todo o ciclo do ativo.',
     },
   ]
 
@@ -220,7 +220,9 @@ export default function QuemSomosPage() {
               Estrutura Organizacional
             </h2>
             <p className="text-lg text-slate-600">
-              Operamos por meio de departamentos estruturados que garantem controle, eficiência e especialização.
+              Operamos com áreas estruturadas para garantir controle, eficiência e excelência na gestão
+e administração de ativos imobiliários.
+
             </p>
           </div>
 
@@ -309,8 +311,9 @@ export default function QuemSomosPage() {
                <div>
                   <h3 className="text-2xl font-bold mb-4 text-white">Missão</h3>
                   <p className="text-slate-400 leading-relaxed text-lg">
-                    Oferecer soluções completas e seguras no universo de imóveis de leilão, 
-                    garantindo governança, transparência e retorno potencial para clientes e parceiros.
+                    Oferecer soluções completas e seguras em gestão e administração de ativos
+imobiliários, garantindo governança, transparência, eficiência operacional e valorização
+patrimonial para clientes e parceiros.
                   </p>
                </div>
             </motion.div>
@@ -327,8 +330,9 @@ export default function QuemSomosPage() {
                <div>
                   <h3 className="text-2xl font-bold mb-4 text-white">Visão</h3>
                   <p className="text-slate-400 leading-relaxed text-lg">
-                    Ser reconhecida nacionalmente como a empresa de maior credibilidade e eficiência 
-                    no segmento de investimento em leilões, gestão de ativos e administração imobiliária.
+                    Ser reconhecida nacionalmente como referência em credibilidade, eficiência e excelência
+na gestão e administração de ativos imobiliários, entregando segurança e performance
+patrimonial em cada operação.
                   </p>
                </div>
             </motion.div>

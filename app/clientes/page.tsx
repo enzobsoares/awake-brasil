@@ -26,25 +26,25 @@ export default function ClientesPage() {
     {
       icon: Landmark,
       title: 'Investidores',
-      description: 'Indivíduos ou instituições buscando diversificar portfólio com ativos de leilões sob gestão especializada.',
+      description: 'IIndivíduos ou instituições que buscam diversificar seu portfólio com ativos imobiliários sob gestão e administração especializada, com foco em segurança e valorização patrimonial.',
     },
     {
       icon: Wallet,
       title: 'Parceiros & Agentes',
-      description: 'Empresas e profissionais que desejam integrar nossa rede e ter acesso a oportunidades exclusivas.',
+      description: 'Empresas e profissionais que desejam integrar nossa rede operacional e estratégica, atuando em conjunto na gestão e administração de ativos imobiliários com acesso a oportunidades qualificadas.',
     },
     {
       icon: TrendingUp,
       title: 'Fundos de Investimento',
-      description: 'Gestores de patrimônio que atuam em escala, exigindo governança, transparência e operações auditáveis.',
+      description: 'Gestores de patrimônio que operam em escala, exigindo governança, transparência e processos auditáveis na gestão e administração de ativos imobiliários.',
     }
   ]
 
   const benefits = [
-    'Oportunidades exclusivas previamente analisadas',
-    'Suporte técnico-jurídico em todas as fases',
-    'Rede nacional para captação de oportunidades regionais',
-    'Relatórios periódicos de desempenho e compliance',
+    'Ativos previamente analisados e qualificados',
+    'Suporte técnico e jurídico em todas as etapas',
+    'Rede nacional para atuação e acompanhamento regional',
+    'Relatórios periódicos de desempenho, gestão e compliance',
     'Programa de capacitação para agentes credenciados',
   ]
 
@@ -143,7 +143,9 @@ export default function ClientesPage() {
                 Benefícios da Parceria
               </h2>
               <p className="text-lg text-slate-600">
-                Ao se associar à Awake Brasil, você ganha acesso a uma estrutura robusta de inteligência imobiliária.
+                Ao se associar à Awake Brasil, você passa a contar com uma estrutura completa de gestão
+e administração de ativos imobiliários, com governança, segurança e eficiência
+operacional.
               </p>
               
               <div className="space-y-4 pt-2">

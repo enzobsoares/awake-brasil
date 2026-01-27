@@ -37,27 +37,27 @@ export default function InvestidorPage() {
   const whyInvest = [
     {
       title: 'Acesso a Oportunidades Selecionadas',
-      description: 'Imóveis previamente avaliados com potencial de valorização e geração de renda.',
+      description: 'Ativos imobiliários previamente avaliados, com potencial de valorização e geração de renda.',
       icon: Eye
     },
     {
       title: 'Estrutura Nacional',
-      description: 'Captação de ativos em diversas regiões do país, ampliando o universo de oportunidades.',
+      description: 'Atuação em diferentes regiões do país, ampliando a capacidade de mapeamento e gestão de ativos imobiliários.',
       icon: Landmark
     },
     {
       title: 'Gestão Profissional Completa',
-      description: 'Do arremate à monetização (locação, revenda ou valorização), cuidamos de tudo.',
+      description: 'Da estruturação à valorização do ativo (locação, revenda ou otimização patrimonial),cuidamos de toda a operação.',
       icon: Briefcase
     },
     {
       title: 'Transparência Plena',
-      description: 'Relatórios periódicos, governança e conformidade rigorosa em cada operação.',
+      description: 'Relatórios periódicos, governança e conformidade rigorosa em cada etapa da gestão.',
       icon: FileText
     },
     {
       title: 'Mitigação de Riscos',
-      description: 'Atuação com padrões técnicos e jurídicos que garantem segurança na aquisição.',
+      description: 'Atuação com padrões técnicos e jurídicos que garantem segurança na aquisição e na administração do ativo.',
       icon: Shield
     }
   ]
@@ -78,27 +78,27 @@ export default function InvestidorPage() {
     {
       number: '01',
       title: 'Contato Inicial',
-      desc: 'Análise de perfil, capital disponível e objetivos.'
+      desc: 'Análise de perfil, capital disponível e objetivos para definição da estratégia de investimento imobiliário.'
     },
     {
       number: '02',
       title: 'Seleção',
-      desc: 'Apresentação de portfólio com critérios técnicos avalizados.'
+      desc: 'Apresentação de portfólio com ativos previamente avaliados, seguindo critérios técnicos, jurídicos e financeiros.'
     },
     {
       number: '03',
-      title: 'Aquisição',
-      desc: 'Arrematação, regularização e estruturação da estratégia.'
+      title: 'Estruturação e Aquisição',
+      desc: 'Condução do processo de aquisição, organização documental, regularização e estruturação da estratégia do ativo.'
     },
     {
       number: '04',
       title: 'Gestão',
-      desc: 'Monitoramento contínuo, manutenção e relatórios periódicos.'
+      desc: 'Administração contínua do ativo com monitoramento, manutenção e relatórios periódicos de desempenho.'
     },
     {
       number: '05',
-      title: 'Monetização',
-      desc: 'Saída planejada ou manutenção da locação com prestação de contas.'
+      title: 'Valorização e Performance',
+      desc: 'Estratégia de valorização do patrimônio por meio de locação, revenda ou otimização do ativo, com prestação de contas e governança.'
     }
   ]
 
@@ -134,8 +134,9 @@ export default function InvestidorPage() {
               Invista com segurança, <br/> estratégia e <span className="text-cyan-500">respaldo institucional.</span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed font-light max-w-3xl mx-auto">
-              Descubra como a Awake Brasil estrutura oportunidades de investimento em imóveis
-              provenientes de leilões, com gestão profissional e foco em resultados.
+              Descubra como a Awake Brasil estrutura e administra ativos imobiliários com gestão
+profissional, governança e foco em valorização patrimonial.
+
             </p>
           </motion.div>
         </div>
@@ -154,15 +155,16 @@ export default function InvestidorPage() {
             </h2>
             <div className="text-lg text-slate-600 leading-relaxed space-y-6">
               <p>
-                No atual cenário econômico, investir em ativos imobiliários via leilões judiciais e
-                extrajudiciais representa uma alternativa diferenciada de diversificação de portfólio. A
-                Awake Brasil identifica, avalia e estrutura essas oportunidades com o compromisso de
-                transparência, rigor técnico e performance.
+                No cenário atual, investir em ativos imobiliários com gestão profissional representa uma
+alternativa sólida para diversificação de portfólio. A Awake Brasil identifica, avalia e
+estrutura oportunidades com compromisso de transparência, rigor técnico e foco em
+performance.
+
               </p>
               <p className="font-medium text-slate-800">
-                Aqui encontrará uma jornada de investimento cuidadosamente concebida para oferecer
-                não apenas acesso a imóveis de leilão, mas a ativos geridos de forma proativa, com
-                acompanhamento especializado em todas as etapas.
+                Aqui você encontra uma jornada de investimento cuidadosamente planejada, com gestão e
+administração proativa de ativos imobiliários, acompanhamento especializado e suporte
+completo em todas as etapas.
               </p>
             </div>
           </motion.div>

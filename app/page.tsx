@@ -56,7 +56,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium">
-              Estruturamos ativos desde a prospecção até a administração contínua, garantindo organização operacional, controle financeiro e valorização patrimonial.
+              Estruturamos com administração e gestão con
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-8 h-14 text-base tracking-wide transition-all duration-300 font-bold shadow-lg shadow-cyan-900/20">
@@ -152,17 +152,19 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Nossa Expertise</h2>
-            <p className="text-slate-600 font-medium">Um ecossistema completo de gestão imobiliária, focado na segurança do seu patrimônio.</p>
+            <p className="text-slate-600 font-medium">Gestão e administração de ativos imobiliários com foco em eficiência, segurança e
+valorização patrimonial.
+</p>
           </div>
 
           {/* Grid Minimalista Centralizado */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 max-w-6xl mx-auto">
             {[
-              { title: "Prospecção Estratégica", desc: "Identificação de oportunidades em todo território nacional com análise criteriosa.", icon: Search },
-              { title: "Due Diligence Integrada", desc: "Processos jurídicos, documentais e mercadológicos para mitigação de riscos.", icon: ShieldCheck },
-              { title: "Estruturação e Aquisição", desc: "Condução integral da operação, negociação e regularização do imóvel.", icon: FileCheck },
-              { title: "Gestão Especializada", desc: "Estratégias de monetização, locação ou revenda com foco no perfil do ativo.", icon: Settings },
-              { title: "Rede de Parceiros", desc: "Capilaridade operacional com representantes credenciados locais.", icon: Users },
+              { title: "Mapeamento de Ativos", desc: "Identificação e análise de oportunidades imobiliárias alinhadas ao perfil e objetivos do investidor.", icon: Search },
+              { title: "Estruturação e Regularização", desc: "Condução completa de etapas operacionais, negociação, regularização e suporte técnico para gestão do imóvel.", icon: ShieldCheck },
+              { title: "Rede de Especialistas", desc: "Atuação com parceiros credenciados para suporte local, execução técnica e acompanhamento de demandas operacionais.", icon: FileCheck },
+              { title: "Gestão Jurídica e Documental", desc: "Organização e acompanhamento de processos jurídicos e documentais para garantir conformidade e mitigação de riscos.", icon: Settings },
+              { title: "Administração Estratégica", desc: "Gestão contínua com organização operacional, controle financeiro e direcionamento para valorização do patrimônio.", icon: Users },
             ].map((item, index) => (
               <motion.div 
                 key={index}
