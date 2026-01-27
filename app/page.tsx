@@ -56,7 +56,8 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium">
-              Estruturamos com administração e gestão con
+              Estruturamos com administração e gestão contínua, garantindo organização operacional,
+controle financeiro e valorização patrimonial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-8 h-14 text-base tracking-wide transition-all duration-300 font-bold shadow-lg shadow-cyan-900/20">
