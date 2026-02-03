@@ -120,7 +120,7 @@ export default function QuemSomosPage() {
               Excelência estratégica em investimentos imobiliários
             </h1>
             <p className="text-xl text-slate-300 text-pretty leading-relaxed font-medium max-w-3xl mx-auto">
-              Desde 2010, a Awake Brasil atua com solidez e visão para transformar imóveis de leilão
+              Desde 2010, o Grupo Awake Brasil atua com solidez e visão para transformar imóveis de leilão
               em ativos estruturados para investidores.
             </p>
           </motion.div>
@@ -150,7 +150,7 @@ export default function QuemSomosPage() {
               
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  Desde a sua constituição em 2010, a Awake Brasil vem se consolidando como uma
+                  Desde a sua constituição em 2010, o Grupo Awake Brasil vem se consolidando como uma
                   referência no segmento de investimentos em imóveis provenientes de leilões judiciais e
                   extrajudiciais.
                 </p>
@@ -367,7 +367,7 @@ patrimonial em cada operação.
               Quer conhecer nossas oportunidades?
             </h2>
             <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
-              Se deseja saber como a Awake Brasil pode apoiá-lo em investimentos ou parcerias, 
+              Se deseja saber como o Grupo Awake Brasil pode apoiá-lo em investimentos ou parcerias, 
               solicite uma reunião com nossos especialistas.
             </p>
             

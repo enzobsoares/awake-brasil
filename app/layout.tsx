@@ -4,6 +4,7 @@ import { Inter, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { CookieConsent } from '@/components/cookie-consent' // <--- IMPORTAÇÃO ADICIONADA
 import './globals.css'
 
 const inter = Inter({ 
@@ -39,7 +40,6 @@ export const metadata: Metadata = {
     'Fundos Imobiliários'
   ],
   authors: [{ name: 'Grupo Awake Brasil' }],
-  // Configuração limpa de ícone
   icons: {
     icon: '/favicon.ico', 
   },
@@ -66,6 +66,10 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        
+        {/* Componente de Cookies adicionado aqui */}
+        <CookieConsent />
+        
         <Analytics />
       </body>
     </html>

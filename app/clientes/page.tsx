@@ -50,12 +50,12 @@ export default function ClientesPage() {
 
   const testimonials = [
     {
-      quote: "É genuíno o apoio, a atenção e o nível de comprometimento da Awake Brasil. Com profissionais engajados e competentes, os desafios são superados com maestria e as entregas com acabativa impecável.",
+      quote: "É genuíno o apoio, a atenção e o nível de comprometimento do Grupo Awake Brasil. Com profissionais engajados e competentes, os desafios são superados com maestria e as entregas com acabativa impecável.",
       author: "André Alvarenga",
       role: "Gerente de Facilities, Banco Sofisa S.A."
     },
     {
-      quote: "A assessoria de ponta da Awake Brasil permitiu que concluíssemos negócios com êxito absoluto. Pelo excelente atendimento, recomendo.",
+      quote: "A assessoria de ponta do Grupo Awake Brasil permitiu que concluíssemos negócios com êxito absoluto. Pelo excelente atendimento, recomendo.",
       author: "Dr. Oliveira",
       role: "Sócio-Proprietário do Grupo Oliveira"
     }
@@ -98,7 +98,7 @@ export default function ClientesPage() {
               A força de um ecossistema integrado
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              A Awake Brasil entende que o sucesso na gestão de ativos imobiliários não depende apenas da identificação de oportunidades, mas da construção de um ecossistema colaborativo. Nossos clientes e parceiros são parte integrante desse sucesso, materializando resultados relevantes no mercado nacional.
+              O Grupo Awake Brasil entende que o sucesso na gestão de ativos imobiliários não depende apenas da identificação de oportunidades, mas da construção de um ecossistema colaborativo. Nossos clientes e parceiros são parte integrante desse sucesso, materializando resultados relevantes no mercado nacional.
             </p>
           </motion.div>
         </div>
@@ -143,7 +143,7 @@ export default function ClientesPage() {
                 Benefícios da Parceria
               </h2>
               <p className="text-lg text-slate-600">
-                Ao se associar à Awake Brasil, você passa a contar com uma estrutura completa de gestão
+                Ao se associar ao Grupo Awake Brasil, você passa a contar com uma estrutura completa de gestão
 e administração de ativos imobiliários, com governança, segurança e eficiência
 operacional.
               </p>

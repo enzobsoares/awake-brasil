@@ -112,7 +112,7 @@ export default function LeiloesPage() {
               
               <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
                 Acesse imóveis criteriosamente selecionados por meio de leilões judiciais e extrajudiciais,
-                com a segurança e a expertise da Awake Brasil.
+                com a segurança e a expertise do Grupo Awake Brasil.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -156,7 +156,7 @@ export default function LeiloesPage() {
             </h2>
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
               <p>
-                Na Awake Brasil, entendemos que os ativos provenientes de leilão representam uma
+                No Grupo Awake Brasil, entendemos que os ativos provenientes de leilão representam uma
                 parcela significativa de oportunidade no mercado imobiliário nacional. Porém, apenas
                 oportunidades identificadas e estruturadas com rigor técnico e jurídico se traduzem em
                 resultados reais.
@@ -178,7 +178,7 @@ export default function LeiloesPage() {
             
             <div className="lg:w-1/3">
               <div className="sticky top-24">
-                <h2 className="text-4xl font-bold mb-6">Por que investir via leilões com a Awake?</h2>
+                <h2 className="text-4xl font-bold mb-6">Por que investir via leilões com o Grupo Awake Brasil?</h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
                   Oferecemos uma camada de inteligência e segurança que elimina as incertezas tradicionais deste mercado.
                 </p>

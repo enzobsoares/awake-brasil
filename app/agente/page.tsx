@@ -50,14 +50,14 @@ export default function AgentePage() {
 
   const responsibilities = [
     'Atuar como ponto de contato local para investidores ou clientes.',
-    'Garantir conformidade com os padrões técnicos e jurídicos da Awake Brasil.',
+    'Garantir conformidade com os padrões técnicos e jurídicos do Grupo Awake Brasil.',
     'Integrar-se à rede de agentes e seguir os fluxos operacionais internos.'
   ]
 
   const requirements = [
     'Experiência comprovada no mercado de imóveis ou investimentos.',
     'Estrutura de atendimento profissional (física ou remota qualificada).',
-    'Comprometimento ético com os valores da Awake Brasil.',
+    'Comprometimento ético com os valores do Grupo Awake Brasil.',
     'Disponibilidade para treinamentos e report de desempenho.'
   ]
 
@@ -79,7 +79,7 @@ export default function AgentePage() {
     },
     {
       title: 'Branding Institucional',
-      desc: 'Associação à marca Awake Brasil, sinônimo de solidez no mercado.',
+      desc: 'Associação à marca Grupo Awake Brasil, sinônimo de solidez no mercado.',
       icon: Users
     }
   ]
@@ -108,7 +108,7 @@ export default function AgentePage() {
               Parceria Estratégica
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-              Torne-se Agente Credenciado <br/> Awake Brasil
+              Torne-se Agente Credenciado <br/> Grupo Awake Brasil
             </h1>
             <p className="text-xl text-slate-300 text-pretty leading-relaxed font-medium max-w-3xl mx-auto">
               Integre-se à nossa rede de representantes autorizados e amplie suas oportunidades com
@@ -142,7 +142,7 @@ export default function AgentePage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Na Awake Brasil, consideramos nossos agentes credenciados elementos fundamentais
+                  No Grupo Awake Brasil, consideramos nossos agentes credenciados elementos fundamentais
                   para a expansão de nossa atuação. Essa rede seletiva conecta o alcance
                   regional com a estrutura nacional.
                 </p>

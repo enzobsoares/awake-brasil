@@ -89,7 +89,7 @@ controle financeiro e valorização patrimonial.
               <div className="relative h-[500px] w-full">
                 <Image 
                   src="/autoridade.jpg" 
-                  alt="Sede Awake Brasil" 
+                  alt="Sede Grupo Awake Brasil" 
                   fill 
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out shadow-2xl"
                 />
@@ -112,7 +112,7 @@ controle financeiro e valorização patrimonial.
               </h2>
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  O Grupo Awake atua com visão estratégica na gestão e administração de ativos imobiliários. Nossa atuação é orientada por processos bem definidos, controle rigoroso e foco na valorização patrimonial.
+                  O Grupo Awake Brasil atua com visão estratégica na gestão e administração de ativos imobiliários. Nossa atuação é orientada por processos bem definidos, controle rigoroso e foco na valorização patrimonial.
                 </p>
                 <p>
                   Contamos com uma <strong>equipe multidisciplinar</strong> que integra análise de mercado, inteligência documental e suporte jurídico-operacional.
@@ -287,7 +287,7 @@ valorização patrimonial.
               Está pronto para estruturar e potencializar <br/> seus ativos imobiliários?
             </h2>
             <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
-              Descubra como o Grupo Awake pode apoiar sua operação com segurança, governança e visão estratégica.
+              Descubra como o Grupo Awake Brasil pode apoiar sua operação com segurança, governança e visão estratégica.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                <Button className="bg-cyan-700 hover:bg-cyan-800 text-white h-14 px-8 text-base rounded-none transition-all hover:scale-105 font-bold">

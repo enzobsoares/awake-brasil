@@ -101,7 +101,7 @@ export default function ContatoPage() {
                   Canais de Atendimento
                 </h2>
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  A Awake Brasil valoriza o relacionamento direto e transparente. Caso deseje obter mais informações, utilize um dos canais abaixo.
+                  O Grupo Awake Brasil valoriza o relacionamento direto e transparente. Caso deseje obter mais informações, utilize um dos canais abaixo.
                 </p>
               </div>
 

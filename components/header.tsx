@@ -15,7 +15,7 @@ export function Header() {
     { name: 'Clientes', href: '/clientes' },
     { name: 'Leilões', href: '/leiloes' },
     { name: 'Agente', href: '/agente' }, // <--- Novo link adicionado aqui
-    { name: 'Investidor', href: '/investidor' },
+    
     { name: 'Contato', href: '/contato' },
   ]
 

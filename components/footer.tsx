@@ -9,8 +9,7 @@ export function Footer() {
     { name: 'Quem Somos', href: '/quem-somos' },
     { name: 'Clientes', href: '/clientes' },
     { name: 'Leilões', href: '/leiloes' },
-    { name: 'Agente', href: '/agente' }, // Adicionado para consistência
-    { name: 'Investidor', href: '/investidor' },
+    { name: 'Agente', href: '/agente' },
     { name: 'Contato', href: '/contato' },
   ]
 
@@ -88,37 +87,41 @@ export function Footer() {
 
         {/* Social Media & Copyright */}
         <div className="mt-12 pt-8 border-t border-slate-700">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-slate-400">
-              © {new Date().getFullYear()} Grupo Awake Brasil. Todos os direitos reservados.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-slate-400">
+              <p>© {new Date().getFullYear()} Grupo Awake Brasil. Todos os direitos reservados.</p>
+              <Link href="/privacidade" className="hover:text-cyan-400 transition-colors underline decoration-slate-600 underline-offset-4">
+                Política de Privacidade
+              </Link>
+            </div>
+
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/grupoawakebrasil/?originalSubdomain=br"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-cyan-400 transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/grupoawakebrasil/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-cyan-400 transition-colors"
+                aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/grupoawakebrasil/?locale=pt_BR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-cyan-400 transition-colors"
+                aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
               </a>
             </div>
           </div>
