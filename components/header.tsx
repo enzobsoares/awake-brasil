@@ -12,6 +12,7 @@ export function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Quem Somos', href: '/quem-somos' },
+    { name: 'Soluções', href: '/solucoes' },
     { name: 'Clientes', href: '/clientes' },
     { name: 'Leilões', href: '/leiloes' },
     { name: 'Agente', href: '/agente' }, // <--- Novo link adicionado aqui
