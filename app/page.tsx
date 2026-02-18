@@ -61,11 +61,18 @@ export default function HomePage() {
 controle financeiro e valorização patrimonial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-8 h-14 text-base tracking-wide transition-all duration-300 font-bold shadow-lg shadow-cyan-900/20">
-                Conheça nossas soluções
+              {/* Botão 1: Link para Soluções */}
+              <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-8 h-14 text-base tracking-wide transition-all duration-300 font-bold shadow-lg shadow-cyan-900/20" asChild>
+                <Link href="/solucoes">
+                  Conheça nossas soluções
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-slate-500 text-white hover:bg-white hover:text-slate-900 rounded-none px-8 h-14 text-base tracking-wide bg-transparent transition-all duration-300">
-                Fale com um especialista
+
+              {/* Botão 2: Link para Contato */}
+              <Button size="lg" variant="outline" className="border-slate-500 text-white hover:bg-white hover:text-slate-900 rounded-none px-8 h-14 text-base tracking-wide bg-transparent transition-all duration-300" asChild>
+                <Link href="/contato">
+                  Fale com um especialista
+                </Link>
               </Button>
             </div>
           </motion.div>

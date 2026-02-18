@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Building2, Mail, Phone, Linkedin, Instagram, Facebook, Clock } from 'lucide-react'
+import { Building2, Mail, Phone, Linkedin, Instagram, Facebook, Clock, MapPin } from 'lucide-react'
 
 export function Footer() {
   const quickLinks = [
@@ -18,15 +18,28 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
-          {/* 1. Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Building2 className="h-6 w-6 text-cyan-400" />
-              <span className="text-lg font-bold">Grupo Awake Brasil</span>
+          {/* 1. Company Info & Endereço */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Building2 className="h-6 w-6 text-cyan-400" />
+                <span className="text-lg font-bold">Grupo Awake Brasil</span>
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Excelência estratégica em investimentos imobiliários e gestão patrimonial.
+              </p>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Excelência estratégica em investimentos imobiliários e gestão patrimonial.
-            </p>
+
+            {/* Endereço Adicionado Aqui */}
+            <div className="flex items-start gap-3 text-sm text-slate-300 pt-2 border-t border-slate-700/50">
+                <MapPin className="h-5 w-5 text-cyan-400 shrink-0 mt-1" />
+                <div className="space-y-1 leading-relaxed">
+                  <p>Rua Idalina Pereira dos Santos nº 67, Sala 401</p>
+                  <p>Edifício Blue Diamond Business</p>
+                  <p>Agronômica – Florianópolis/SC</p>
+                  <p>CEP: 88025-260</p>
+                </div>
+            </div>
           </div>
 
           {/* 2. Contact (Telefones) */}

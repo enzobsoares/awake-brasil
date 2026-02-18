@@ -7,12 +7,8 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { 
-  Briefcase, 
   Award, 
-  TrendingUp, 
   Users, 
-  CheckSquare, 
-  MapPin, 
   FileText, 
   ShieldCheck, 
   Send,
@@ -20,7 +16,6 @@ import {
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // Animações
 const fadeInUp = {
@@ -48,38 +43,33 @@ export default function AgentePage() {
     // Integração com API
   }
 
+  // --- NOVOS TEXTOS: Responsabilidades ---
   const responsibilities = [
-    'Atuar como ponto de contato local para investidores ou clientes.',
-    'Garantir conformidade com os padrões técnicos e jurídicos do Grupo Awake Brasil.',
-    'Integrar-se à rede de agentes e seguir os fluxos operacionais internos.'
+    'Atuar como ponto de apoio ou conexão regional junto a clientes, investidores ou operações.',
+    'Garantir conformidade com os padrões técnicos, jurídicos e operacionais do Grupo Awake Brasil.',
+    'Integrar-se aos fluxos internos, contribuindo de forma colaborativa para a eficiência das atividades e projetos.'
   ]
 
-  const requirements = [
-    'Experiência comprovada no mercado de imóveis ou investimentos.',
-    'Estrutura de atendimento profissional (física ou remota qualificada).',
-    'Comprometimento ético com os valores do Grupo Awake Brasil.',
-    'Disponibilidade para treinamentos e report de desempenho.'
-  ]
-
+  // --- NOVOS TEXTOS: Benefícios ---
   const benefits = [
     {
-      title: 'Oportunidades Privilegiadas',
-      desc: 'Acesso a ativos de leilão previamente avaliados e com expertise Awake.',
+      title: 'Oportunidades Qualificadas',
+      desc: 'Acesso a ativos e projetos previamente analisados, com curadoria técnica e governança estruturada do Grupo Awake Brasil.',
       icon: Award
     },
     {
       title: 'Suporte Jurídico e Operacional',
-      desc: 'Retaguarda da matriz para agilizar aquisições e regularizações.',
+      desc: 'Retaguarda especializada para apoiar processos, regularizações e demandas operacionais com segurança e eficiência.',
       icon: ShieldCheck
     },
     {
-      title: 'Treinamento e Material',
-      desc: 'Manuais, webinars e templates de vendas para sua capacitação.',
+      title: 'Capacitação e Materiais Estratégicos',
+      desc: 'Conteúdos, treinamentos e recursos institucionais que contribuem para integração, desenvolvimento e padronização da atuação dos parceiros.',
       icon: FileText
     },
     {
-      title: 'Branding Institucional',
-      desc: 'Associação à marca Grupo Awake Brasil, sinônimo de solidez no mercado.',
+      title: 'Fortalecimento de Marca Institucional',
+      desc: 'Vinculação a uma estrutura sólida e reconhecida, ampliando credibilidade, posicionamento e presença no mercado.',
       icon: Users
     }
   ]
@@ -108,7 +98,7 @@ export default function AgentePage() {
               Parceria Estratégica
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
-              Torne-se Agente Credenciado <br/> Grupo Awake Brasil
+              Torne-se Parceiro Credenciado <br/> Grupo Awake Brasil
             </h1>
             <p className="text-xl text-slate-300 text-pretty leading-relaxed font-medium max-w-3xl mx-auto">
               Integre-se à nossa rede de representantes autorizados e amplie suas oportunidades com
@@ -127,7 +117,7 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 2. INTRODUÇÃO E RESPONSABILIDADES (Split Screen) */}
+      {/* 2. INTRODUÇÃO E RESPONSABILIDADES (Atualizado) */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -142,21 +132,23 @@ export default function AgentePage() {
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  No Grupo Awake Brasil, consideramos nossos agentes credenciados elementos fundamentais
-                  para a expansão de nossa atuação. Essa rede seletiva conecta o alcance
-                  regional com a estrutura nacional.
+                  No Grupo Awake Brasil, consideramos nossos parceiros credenciados elementos 
+                  fundamentais para a expansão e fortalecimento da nossa atuação. Essa rede 
+                  seletiva conecta a presença regional a uma estrutura nacional sólida, promovendo 
+                  eficiência, governança e crescimento sustentável.
                 </p>
                 <p>
-                  Como Agente Credenciado, você representa nossa marca, tem acesso exclusivo a
-                  oportunidades e processos personalizados — ampliando suas receitas com
-                  credibilidade.
+                  Ao se credenciar como parceiro, você passa a atuar de forma integrada à nossa 
+                  estrutura, com acesso a oportunidades qualificadas, processos organizados e 
+                  suporte técnico, jurídico e operacional — ampliando resultados com segurança e 
+                  credibilidade institucional.
                 </p>
               </div>
 
               <div className="mt-8 p-6 bg-slate-50 border-l-4 border-cyan-500 rounded-r-lg">
                 <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
                   <UserCheck className="h-5 w-5 text-cyan-600" />
-                  Responsabilidades do Agente
+                  Responsabilidades do Parceiro
                 </h3>
                 <ul className="space-y-2">
                   {responsibilities.map((item, i) => (
@@ -188,7 +180,7 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 3. BENEFÍCIOS (Grid de Cards) */}
+      {/* 3. BENEFÍCIOS (Atualizado) */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -196,7 +188,7 @@ export default function AgentePage() {
               Benefícios & Suporte
             </h2>
             <p className="text-lg text-slate-600">
-              Uma estrutura completa desenhada para o seu sucesso comercial.
+              Uma estrutura completa voltada ao fortalecimento da sua atuação profissional.
             </p>
           </div>
 
@@ -221,39 +213,9 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 4. PERFIL E REQUISITOS (Checklist Visual) */}
-      <section className="py-24 bg-[#0f172a] text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 p-10 rounded-sm">
-            <div className="flex flex-col md:flex-row gap-12">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <Briefcase className="text-cyan-400" />
-                  Perfil Ideal
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Profissional autônomo ou empresa com atuação no mercado imobiliário ou de
-                  investimentos, com bom relacionamento comercial, ética profissional e interesse em
-                  participar de operações estruturadas de destaque.
-                </p>
-              </div>
-              <div className="md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
-                <h3 className="text-xl font-bold mb-6 text-cyan-400">Requisitos Mínimos</h3>
-                <ul className="space-y-4">
-                  {requirements.map((req, i) => (
-                    <li key={i} className="flex gap-3 items-start text-sm text-slate-300">
-                      <CheckSquare className="h-5 w-5 text-cyan-500 shrink-0" />
-                      {req}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* (SEÇÃO PERFIL IDEAL FOI REMOVIDA AQUI) */}
 
-      {/* 5. PROCESSO DE CREDENCIAMENTO (Timeline Horizontal) */}
+      {/* 4. PROCESSO DE CREDENCIAMENTO */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -280,14 +242,16 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 6. FORMULÁRIO DE CANDIDATURA (CTA Section) */}
+      {/* 5. FORMULÁRIO DE CANDIDATURA (Atualizado) */}
       <section className="py-24 bg-slate-50 border-t border-slate-200" id="candidatura">
         <div className="container mx-auto px-4 max-w-3xl">
           <Card className="shadow-2xl border-t-4 border-t-cyan-500">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Candidatura de Agente</h2>
-                <p className="text-slate-600">Preencha o formulário abaixo para iniciar seu processo de credenciamento.</p>
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">Candidatura de Parceiro</h2>
+                <p className="text-slate-600">
+                  Preencha o formulário abaixo para iniciar seu processo de análise e integração à rede de parceiros do Grupo Awake Brasil.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -326,11 +290,15 @@ export default function AgentePage() {
 
                 <div className="space-y-2">
                   <Label>Resumo de Experiência *</Label>
-                  <Textarea placeholder="Breve histórico profissional..." required onChange={(e) => setFormData({...formData, experience: e.target.value})} />
+                  <Textarea 
+                    placeholder="Breve histórico profissional, área de atuação ou forma como deseja colaborar com o Grupo Awake Brasil." 
+                    required 
+                    onChange={(e) => setFormData({...formData, experience: e.target.value})} 
+                  />
                 </div>
 
                 <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm">
-                  Enviar Candidatura
+                  Enviar Credenciamento
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>
