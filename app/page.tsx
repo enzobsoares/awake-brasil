@@ -1,3 +1,4 @@
+// @ts-ignore
 'use client'
 
 import Link from 'next/link'
@@ -61,7 +62,7 @@ controle financeiro e valorização patrimonial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button size="lg" className="bg-cyan-700 hover:bg-cyan-800 text-white rounded-none px-8 h-14 text-base tracking-wide transition-all duration-300 font-bold shadow-lg shadow-cyan-900/20">
-                Conheça nossos serviços
+                Conheça nossas soluções
               </Button>
               <Button size="lg" variant="outline" className="border-slate-500 text-white hover:bg-white hover:text-slate-900 rounded-none px-8 h-14 text-base tracking-wide bg-transparent transition-all duration-300">
                 Fale com um especialista
@@ -161,7 +162,7 @@ valorização patrimonial.
           {/* Grid Minimalista Centralizado */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 max-w-6xl mx-auto">
             {[
-              { title: "Mapeamento de Ativos", desc: "Identificação e análise de oportunidades imobiliárias alinhadas ao perfil e objetivos do investidor.", icon: Search },
+              { title: "Regularização de Empresas ", desc: "Auxiliamos na estruturação e regularização de empresas e instituições, assegurando conformidade legal e suporte técnico para funcionamento adequado.", icon: Search },
               { title: "Estruturação e Regularização", desc: "Condução completa de etapas operacionais, negociação, regularização e suporte técnico para gestão do imóvel.", icon: ShieldCheck },
               { title: "Rede de Especialistas", desc: "Atuação com parceiros credenciados para suporte local, execução técnica e acompanhamento de demandas operacionais.", icon: FileCheck },
               { title: "Gestão Jurídica e Documental", desc: "Organização e acompanhamento de processos jurídicos e documentais para garantir conformidade e mitigação de riscos.", icon: Settings },
@@ -221,7 +222,7 @@ valorização patrimonial.
                     <div className="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
                       <TrendingUp className="w-8 h-8 text-cyan-400" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Seja um Investidor</h3>
+                    <h3 className="text-2xl font-bold text-white mb-3">Nossas soluções</h3>
                     <p className="text-slate-300 mb-8 px-2 text-sm leading-relaxed">Acesse oportunidades estruturadas com segurança e governança.</p>
                     <span className="inline-flex items-center text-white font-bold group-hover:gap-2 transition-all">
                       Começar a Investir <ArrowRight className="ml-2 w-4 h-4" />
@@ -229,19 +230,7 @@ valorização patrimonial.
                 </Link>
               </div>
 
-              {/* SLIDE 3 */}
-              <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
-                <Link href="/agente" className="group block h-full p-10 bg-white border border-slate-200 hover:border-cyan-500 transition-all text-center hover:shadow-xl relative top-0 hover:-top-2 duration-300 rounded-sm">
-                    <div className="w-16 h-16 mx-auto bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
-                      <Briefcase className="w-8 h-8 text-slate-600 group-hover:text-cyan-700" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Seja Parceiro</h3>
-                    <p className="text-slate-600 mb-8 px-2 text-sm leading-relaxed">Junte-se à nossa rede credenciada e amplie seus negócios.</p>
-                    <span className="inline-flex items-center text-cyan-700 font-bold group-hover:gap-2 transition-all">
-                      Quero ser parceiro <ArrowRight className="ml-2 w-4 h-4" />
-                    </span>
-                </Link>
-              </div>
+              
 
             </div>
           </div>
@@ -291,7 +280,7 @@ valorização patrimonial.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                <Button className="bg-cyan-700 hover:bg-cyan-800 text-white h-14 px-8 text-base rounded-none transition-all hover:scale-105 font-bold">
-                 Conhecer oportunidades
+                 Conhecer soluções
                </Button>
                <Button variant="outline" className="border-slate-500 text-white hover:bg-white hover:text-slate-900 h-14 px-8 text-base rounded-none bg-transparent transition-all font-bold">
                  Fale com um especialista

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { 
   Gavel, 
@@ -11,11 +12,17 @@ import {
   ExternalLink,
   Lock,
   Clock,
-  CheckCircle2
+  CheckCircle2,
+  Users,
+  Building2,
+  Scale,
+  ShieldCheck,
+  Landmark
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ExternalLinkWarningModal } from '@/components/ExternalLinkWarningModal'
 
 // Animações
 const fadeInUp = {
@@ -33,59 +40,67 @@ const slideInLeft = {
 }
 
 export default function LeiloesPage() {
-  
-  const benefits = [
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // DIFERENCIAIS (Seção anterior já atualizada)
+  const differentials = [
     {
-      title: 'Acesso Antecipado',
-      description: 'Acesso a ativos com perfil de retorno elevado antes da concorrência ampla do mercado.'
+      title: 'Gestão Patrimonial Completa',
+      description: 'Administração integral dos ativos, incluindo regularização documental, controle financeiro, manutenção, cobrança de recebíveis e preparação para locação ou venda, garantindo organização e eficiência operacional.',
+      icon: Building2
     },
     {
-      title: 'Avaliação Jurídica Prévia',
-      description: 'Nossa equipe realiza a varredura completa de riscos processuais e documentais antes da oferta.'
+      title: 'Estrutura Técnica Multidisciplinar',
+      description: 'Equipe formada por áreas administrativa, jurídica, financeira, contábil, comercial e de campo, assegurando controle total do ciclo de gestão imobiliária com supervisão direta dos sócios.',
+      icon: Users
     },
     {
-      title: 'Estrutura Nacional',
-      description: 'Capilaridade para arrematar e gerir ativos em múltiplas praças e estados simultaneamente.'
+      title: 'Escala Nacional e Experiência Consolidada',
+      description: 'Mais de uma década de atuação, com +11 bilhões em ativos sob gestão, +500 milhões de m² administrados e centenas de investidores atendidos, evidenciando solidez e capacidade operacional em larga escala.',
+      icon: Landmark
     },
     {
-      title: 'Gestão Pós-Arrematação',
-      description: 'Cuidamos da regularização, desocupação (se necessário), reforma e monetização do ativo.'
+      title: 'Governança, Compliance e Segurança Jurídica',
+      description: 'Processos estruturados de auditoria, análise documental e conformidade legal que reduzem riscos, aumentam a transparência e garantem segurança patrimonial durante toda a administração dos ativos.',
+      icon: ShieldCheck
     },
     {
-      title: 'Transparência Radical',
-      description: 'Acesso a relatórios detalhados para acompanhar cada marco da evolução do investimento.'
+      title: 'Foco em Liquidez e Valorização de Longo Prazo',
+      description: 'Metodologia orientada à organização, preservação de valor e geração de performance patrimonial contínua, acompanhando o ativo desde a regularização até sua plena eficiência econômica.',
+      icon: TrendingUp
     }
   ]
 
+  // ETAPAS DA METODOLOGIA (Atualizado com novos textos)
   const steps = [
     {
       id: '01',
-      title: 'Seleção de Lotes',
-      text: 'Mapeamento contínuo de leilões judiciais e extrajudiciais em todo o território nacional.',
+      title: 'Diagnóstico Técnico e Documental',
+      text: 'Análise completa da situação jurídica, registral, fiscal e operacional dos imóveis pertencentes à carteira do cliente, identificando riscos, pendências e oportunidades de organização patrimonial.',
       icon: Search
     },
     {
       id: '02',
-      title: 'Avaliação Técnica e Jurídica',
-      text: 'Due diligence completa (física, jurídica e mercadológica) para mitigação absoluta de riscos.',
+      title: 'Regularização e Estruturação Jurídica',
+      text: 'Condução dos processos de regularização documental, adequação cadastral e organização jurídica necessários para garantir conformidade legal e viabilidade administrativa dos ativos.',
       icon: FileCheck
     },
     {
       id: '03',
-      title: 'Arrematação & Estruturação',
-      text: 'Representação no leilão, aquisição formal, regularização documental e definição da estratégia.',
+      title: 'Implementação da Gestão Operacional',
+      text: 'Administração contínua dos imóveis com controle financeiro, manutenção, acompanhamento técnico, gestão contratual e cobrança de recebíveis, assegurando eficiência e preservação de valor.',
       icon: Gavel
     },
     {
       id: '04',
-      title: 'Gestão e Monetização',
-      text: 'Implementação do plano de saída: locação para renda passiva, revenda com ágio ou incorporação.',
+      title: 'Estratégias de Valorização Patrimonial',
+      text: 'Ações orientadas à performance econômica do ativo, incluindo reposicionamento de mercado, preparação para locação ou venda e otimização de resultados patrimoniais.',
       icon: TrendingUp
     },
     {
       id: '05',
-      title: 'Relatórios e Comunicação',
-      text: 'Atualização periódica sobre desempenho, status legal e indicadores financeiros.',
+      title: 'Governança, Monitoramento e Relatórios',
+      text: 'Acompanhamento contínuo com indicadores de desempenho, auditoria documental, transparência de informações e relatórios periódicos ao cliente durante todo o ciclo de administração.',
       icon: BarChart3
     }
   ]
@@ -93,7 +108,7 @@ export default function LeiloesPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-cyan-500/30 pt-16">
       
-      {/* 1. HERO SECTION - Clean & Editorial */}
+      {/* 1. HERO SECTION */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -103,21 +118,34 @@ export default function LeiloesPage() {
               className="lg:w-1/2 space-y-8 relative z-10"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 border-l-4 border-cyan-500 bg-slate-50 text-slate-900 text-sm font-bold uppercase tracking-wider">
-                Oportunidades em Leilões
+                Mercado de ativos imobiliários
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Ativos com potencial <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-800">estruturado.</span>
+                Ativos com potencial de valorização <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-800">estruturada.</span>
               </h1>
               
               <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
-                Acesse imóveis criteriosamente selecionados por meio de leilões judiciais e extrajudiciais,
-                com a segurança e a expertise do Grupo Awake Brasil.
+                Se você tem interesse em conhecer oportunidades relacionadas a imóveis disponibilizados
+                em leilões, existem plataformas e empresas especializadas dedicadas exclusivamente a
+                essa finalidade.
+              </p>
+
+              <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
+                O Grupo Awake Brasil atua de forma independente, concentrando-se na gestão,
+                regularização e administração patrimonial de ativos imobiliários, não realizando
+                intermediação, captação ou operação de leilões.
+              </p>
+
+              <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
+                O acesso abaixo é disponibilizado apenas como referência informativa, direcionando
+                para ambiente externo operado por empresa autônoma, sem vínculo societário ou
+                operacional com o Grupo Awake Brasil.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-8 h-14 text-base font-bold shadow-xl">
-                   Ver Oportunidades
+                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-8 h-14 text-base font-bold shadow-xl" onClick={() => setIsModalOpen(true)}>
+                   Acessar plataforma externa de leilões
                 </Button>
               </div>
             </motion.div>
@@ -136,10 +164,8 @@ export default function LeiloesPage() {
                     fill 
                     className="object-cover"
                   />
-                  {/* Overlay Gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent mix-blend-multiply" />
                </div>
-               {/* Elemento Decorativo */}
                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-cyan-500 z-[-1]" />
             </motion.div>
 
@@ -147,47 +173,25 @@ export default function LeiloesPage() {
         </div>
       </section>
 
-      {/* 2. INTRODUÇÃO (Texto Corrido - Estilo Jornal) */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 leading-snug">
-              Transformando a complexidade dos leilões em resultados consistentes
-            </h2>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-              <p>
-                No Grupo Awake Brasil, entendemos que os ativos provenientes de leilão representam uma
-                parcela significativa de oportunidade no mercado imobiliário nacional. Porém, apenas
-                oportunidades identificadas e estruturadas com rigor técnico e jurídico se traduzem em
-                resultados reais.
-              </p>
-              <p>
-                Por isso oferecemos um portal dedicado, que reúne os imóveis
-                disponíveis e pré-avaliados para investidores, com o respaldo completo da nossa
-                metodologia de atuação.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3. POR QUE INVESTIR (Dark List - Sem Cards) */}
+      {/* 2. POR QUE CONTAR COM O GRUPO AWAKE */}
       <section className="py-24 bg-[#0f172a] text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16">
             
             <div className="lg:w-1/3">
               <div className="sticky top-24">
-                <h2 className="text-4xl font-bold mb-6">Por que investir via leilões com o Grupo Awake Brasil?</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white leading-tight">
+                  Por que contar com o Grupo Awake Brasil na gestão de ativos imobiliários?
+                </h2>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                  Oferecemos uma camada de inteligência e segurança que elimina as incertezas tradicionais deste mercado.
+                  Atuamos desde 2010 com presença nacional e internacional, dedicados à gestão completa, regularização e valorização patrimonial de ativos imobiliários, transformando imóveis em oportunidades rentáveis por meio de processos técnicos, jurídicos e operacionais integrados.
                 </p>
                 <div className="w-20 h-1 bg-cyan-500" />
               </div>
             </div>
 
             <div className="lg:w-2/3 space-y-8">
-              {benefits.map((benefit, index) => (
+              {differentials.map((item, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
@@ -197,11 +201,13 @@ export default function LeiloesPage() {
                   className="flex gap-6 pb-8 border-b border-slate-800 last:border-0 hover:bg-white/5 transition-colors p-4 rounded-lg group"
                 >
                   <div className="shrink-0 mt-1">
-                    <CheckCircle2 className="w-6 h-6 text-cyan-500" />
+                    <div className="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                      <item.icon className="w-6 h-6" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{benefit.title}</h3>
-                    <p className="text-slate-400 leading-relaxed">{benefit.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{item.title}</h3>
+                    <p className="text-slate-400 leading-relaxed text-base">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -211,12 +217,14 @@ export default function LeiloesPage() {
         </div>
       </section>
 
-      {/* 4. PROCESSO SIMPLIFICADO (Vertical Timeline) */}
+      {/* 3. METODOLOGIA DE GESTÃO (Timeline Vertical - Atualizada) */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="text-cyan-700 font-bold uppercase tracking-widest text-sm">Metodologia</span>
-            <h2 className="text-4xl font-bold text-slate-900 mt-2">Processo Simplificado</h2>
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Metodologia de Gestão Patrimonial</h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Processo estruturado que assegura organização, segurança jurídica, eficiência operacional e valorização contínua dos ativos imobiliários sob administração.
+            </p>
           </div>
 
           <div className="max-w-4xl mx-auto relative">
@@ -238,7 +246,7 @@ export default function LeiloesPage() {
                 <div className="flex-1 pl-16 md:pl-0 text-left md:text-right">
                   <div className={`md:pr-12 ${index % 2 !== 0 ? 'md:text-left md:pl-12 md:pr-0' : ''}`}>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                    <p className="text-slate-600">{step.text}</p>
+                    <p className="text-slate-600 leading-relaxed">{step.text}</p>
                   </div>
                 </div>
 
@@ -255,50 +263,9 @@ export default function LeiloesPage() {
         </div>
       </section>
 
-      {/* 5. CTA - PORTAL EXCLUSIVO (Full Width Banner) */}
-      <section className="relative py-32 bg-[#1e293b] overflow-hidden">
-        <div className="absolute inset-0">
-           <Image 
-             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
-             alt="Building Abstract" 
-             fill 
-             className="object-cover opacity-10 mix-blend-overlay"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/90 to-slate-900/90" />
-        </div>
+      
 
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div {...fadeInUp} className="max-w-3xl mx-auto space-y-8">
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto backdrop-blur-sm border border-white/20">
-               <Lock className="w-8 h-8 text-cyan-400" />
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-              Acesse nosso Portal Exclusivo
-            </h2>
-            
-            <p className="text-lg md:text-xl text-slate-300 font-light">
-              Clique no botão abaixo para acessar o portal exclusivo de imóveis disponíveis
-              em leilão, com filtros, dados de mercado e relatórios pré-estruturados.
-            </p>
-            
-            <div className="pt-4">
-              <Button 
-                size="lg" 
-                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold h-16 px-10 text-lg rounded-none transition-all hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)]"
-              >
-                Ver Oportunidades
-                <ExternalLink className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-            
-            <p className="text-sm text-slate-500 pt-4 opacity-70">
-              * Ambiente externo seguro. Acesso restrito a oportunidades selecionadas.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
+      <ExternalLinkWarningModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
