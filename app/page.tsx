@@ -200,49 +200,48 @@ valorização patrimonial.
 
       {/* 5. ROLETA DE AÇÕES (ACTION HUB) - SLIDER */}
       <section className="py-24 bg-white border-t border-slate-200 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Qual o seu próximo passo?</h2>
-            <p className="text-slate-500 mt-2 font-medium">Escolha a opção ideal para o seu perfil</p>
-          </div>
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Qual o seu próximo passo?</h2>
+      <p className="text-slate-500 mt-2 font-medium">Escolha a opção ideal para o seu perfil</p>
+    </div>
 
-          <div className="overflow-hidden" ref={actionRef}>
-            <div className="flex touch-pan-y -ml-4">
-              
-              {/* SLIDE 1 */}
-              <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
-                <Link href="/contato" className="group block h-full p-10 bg-white border border-slate-200 hover:border-cyan-500 transition-all text-center hover:shadow-xl relative top-0 hover:-top-2 duration-300 rounded-sm">
-                    <div className="w-16 h-16 mx-auto bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
-                      <Handshake className="w-8 h-8 text-slate-600 group-hover:text-cyan-700" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Contato</h3>
-                    <p className="text-slate-600 mb-8 px-2 text-sm leading-relaxed">Deseja falar com nossa equipe? Inicie uma conversa estratégica.</p>
-                    <span className="inline-flex items-center text-cyan-700 font-bold group-hover:gap-2 transition-all">
-                      Fale Conosco <ArrowRight className="ml-2 w-4 h-4" />
-                    </span>
-                </Link>
+    <div className="overflow-hidden" ref={actionRef}>
+      {/* ADICIONADO justify-center AQUI NESTA DIV ABAIXO */}
+      <div className="flex justify-center touch-pan-y -ml-4">
+        
+        {/* SLIDE 1 */}
+        <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
+          <Link href="/contato" className="group block h-full p-10 bg-white border border-slate-200 hover:border-cyan-500 transition-all text-center hover:shadow-xl relative top-0 hover:-top-2 duration-300 rounded-sm">
+              <div className="w-16 h-16 mx-auto bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-100 transition-colors">
+                <Handshake className="w-8 h-8 text-slate-600 group-hover:text-cyan-700" />
               </div>
-
-              {/* SLIDE 2 - ITEM REMOVIDO AQUI */}
-              <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
-                <Link href="/investidor" className="group block h-full p-10 bg-[#1e293b] text-white transition-all text-center relative shadow-2xl hover:shadow-cyan-900/20 top-0 hover:-top-2 duration-300 border-t-4 border-cyan-500 rounded-sm">
-                    <div className="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                      <TrendingUp className="w-8 h-8 text-cyan-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Nossas soluções</h3>
-                    <p className="text-slate-300 mb-8 px-2 text-sm leading-relaxed">Acesse oportunidades estruturadas com segurança e governança.</p>
-                    <span className="inline-flex items-center text-white font-bold group-hover:gap-2 transition-all">
-                      Começar a Investir <ArrowRight className="ml-2 w-4 h-4" />
-                    </span>
-                </Link>
-              </div>
-
-              
-
-            </div>
-          </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Contato</h3>
+              <p className="text-slate-600 mb-8 px-2 text-sm leading-relaxed">Deseja falar com nossa equipe? Inicie uma conversa estratégica.</p>
+              <span className="inline-flex items-center text-cyan-700 font-bold group-hover:gap-2 transition-all">
+                Fale Conosco <ArrowRight className="ml-2 w-4 h-4" />
+              </span>
+          </Link>
         </div>
-      </section>
+
+        {/* SLIDE 2 - ITEM REMOVIDO AQUI */}
+        <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
+          <Link href="/investidor" className="group block h-full p-10 bg-[#1e293b] text-white transition-all text-center relative shadow-2xl hover:shadow-cyan-900/20 top-0 hover:-top-2 duration-300 border-t-4 border-cyan-500 rounded-sm">
+              <div className="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                <TrendingUp className="w-8 h-8 text-cyan-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Nossas soluções</h3>
+              <p className="text-slate-300 mb-8 px-2 text-sm leading-relaxed">Acesse oportunidades estruturadas com segurança e governança.</p>
+              <span className="inline-flex items-center text-white font-bold group-hover:gap-2 transition-all">
+                Começar a Investir <ArrowRight className="ml-2 w-4 h-4" />
+              </span>
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 6. PARA QUEM ATUAMOS - SLIDER */}
       <section className="py-24 bg-slate-50 overflow-hidden">

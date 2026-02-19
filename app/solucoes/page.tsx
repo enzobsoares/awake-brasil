@@ -4,8 +4,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Header } from '@/components/header' // Importando Header existente
-import { Footer } from '@/components/footer' // Importando Footer existente
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { 
   Building2, 
@@ -40,7 +40,7 @@ const staggerContainer = {
 
 export default function SolucoesPage() {
   
-  // Dados para a Seção 1: Gestão Imobiliária
+  // Dados para a Seção 1: Gestão Imobiliária (Mantido no código caso queira usar depois, mas removido da UI conforme referência)
   const gestaoItems = [
     { text: "Avaliação técnica e análise da situação do imóvel", icon: FileSearch },
     { text: "Regularização documental e acompanhamento jurídico", icon: Scale },
@@ -93,31 +93,32 @@ export default function SolucoesPage() {
           </div>
         </section>
 
-        {/* 2. GESTÃO E ADMINISTRAÇÃO (Layout: Texto Esq / Grid Dir) */}
+        {/* 2. GESTÃO E ADMINISTRAÇÃO (Layout fiel à referência: Texto Esq / Imagem Dir) */}
         <section className="py-24 bg-white scroll-mt-20" id="gestao">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="container mx-auto px-4 max-w-6xl">
+            {/* items-center garante o alinhamento horizontal no centro da imagem */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               
-              {/* Texto Descritivo */}
+              {/* Texto Descritivo (Esquerda) */}
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="lg:sticky lg:top-32"
+                className="space-y-6"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-sm flex items-center justify-center text-cyan-800">
-                    <Building2 className="w-6 h-6" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-cyan-50 rounded-sm flex items-center justify-center text-cyan-700">
+                    <Building2 className="w-5 h-5" />
                   </div>
-                  <span className="text-cyan-700 font-bold uppercase tracking-wider text-sm">Solução 01</span>
+                  <span className="text-cyan-700 font-bold uppercase tracking-wider text-xs">SOLUÇÃO 01</span>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                  Gestão e Administração Imobiliária
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                  Gestão e Administração <br/> Imobiliária
                 </h2>
                 
-                <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <div className="space-y-6 text-slate-600 leading-relaxed pt-2">
                   <p>
                     Realizamos a gestão completa de ativos imobiliários com controle técnico, financeiro e jurídico, assegurando organização patrimonial e redução de custos operacionais.
                   </p>
@@ -126,33 +127,27 @@ export default function SolucoesPage() {
                   </p>
                 </div>
 
-                <div className="mt-8">
-                  <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-8 h-14 font-bold shadow-lg" asChild>
+                <div className="pt-6">
+                  <Button className="bg-[#0f172a] hover:bg-slate-800 text-white rounded-none px-8 h-12 font-bold transition-all" asChild>
                     <Link href="/contato">Falar com Consultor</Link>
                   </Button>
                 </div>
               </motion.div>
 
-              {/* Grid de Itens */}
-              <motion.div 
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="grid sm:grid-cols-1 gap-4"
+              {/* Imagem (Direita) - Quadrada/Retangular limpa como na referência */}
+              <motion.div
+                 initial={{ opacity: 0, x: 30 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.8 }}
+                 className="relative aspect-square md:aspect-[4/3] w-full rounded-sm overflow-hidden shadow-2xl"
               >
-                {gestaoItems.map((item, index) => (
-                  <motion.div 
-                    key={index}
-                    variants={fadeInUp}
-                    className="flex items-center gap-4 p-5 bg-slate-50 border border-slate-100 hover:border-cyan-200 hover:shadow-md transition-all duration-300 rounded-sm group"
-                  >
-                    <div className="shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
-                      <item.icon className="w-5 h-5" />
-                    </div>
-                    <p className="text-slate-700 font-medium group-hover:text-slate-900">{item.text}</p>
-                  </motion.div>
-                ))}
+                 <Image 
+                   src="/solucao1.jpeg" 
+                   alt="Gestão Imobiliária"
+                   fill
+                   className="object-cover"
+                 />
               </motion.div>
 
             </div>
@@ -298,7 +293,7 @@ export default function SolucoesPage() {
 
       </main>
       
-      
+     
     </div>
   )
 }
