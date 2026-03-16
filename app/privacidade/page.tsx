@@ -93,7 +93,7 @@ export default function PrivacidadePage() {
                     As informações coletadas são utilizadas primordialmente para:
                   </p>
                   <ul className="list-disc pl-5 space-y-2 text-slate-600 mt-3">
-                    <li>Fornecer serviços de gestão imobiliária e consultoria em leilões;</li>
+                    <li>Fornecer serviços de gestão imobiliária;</li>
                     <li>Enviar oportunidades de investimento personalizadas ao seu perfil;</li>
                     <li>Cumprir obrigações legais e regulatórias (compliance);</li>
                     <li>Melhorar a experiência de navegação em nosso portal.</li>
@@ -155,7 +155,7 @@ export default function PrivacidadePage() {
 
             <div className="border-t border-slate-200 pt-8 text-center text-slate-500 text-sm">
               <p>
-                A Awake Brasil reserva-se o direito de atualizar esta política periodicamente. <br/>
+                O Grupo Awake Brasil reserva-se o direito de atualizar esta política periodicamente. <br/>
                 Recomendamos a visita regular a esta página.
               </p>
             </div>

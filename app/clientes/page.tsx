@@ -42,7 +42,7 @@ export default function ClientesPage() {
       icon: Wallet,
       title: "Empresas e Parceiros Operacionais",
       description:
-        "Organizações e profissionais que atuam de forma integrada na execução técnica, jurídica,= administrativa e operacional da gestão patrimonial imobiliária, contribuindo para eficiência, conformidade e qualidade dos serviços prestados.",
+        "Organizações e profissionais que atuam de forma integrada na execução técnica, jurídica, administrativa e operacional da gestão patrimonial imobiliária, contribuindo para eficiência, conformidade e qualidade dos serviços prestados.",
     },
     {
       icon: TrendingUp,
@@ -212,7 +212,7 @@ export default function ClientesPage() {
                   className="border-cyan-500 text-cyan-400 hover:bg-cyan-950 hover:text-cyan-300 w-full"
                   asChild
                 >
-                  <Link href="/contato">Quero ser um Agente</Link>
+                  <Link href="/agente">Quero ser um Agente</Link>
                 </Button>
               </div>
               {/* Background Pattern */}
@@ -272,7 +272,7 @@ export default function ClientesPage() {
                 className="bg-cyan-700 hover:bg-cyan-800 text-white font-bold h-14 px-8 rounded-none"
                 asChild
               >
-                <Link href="/contato">Quero me credenciar como parceiro
+                <Link href="/agente">Quero me credenciar como parceiro
 </Link>
               </Button>
               

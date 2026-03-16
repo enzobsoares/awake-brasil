@@ -286,10 +286,14 @@ valorização patrimonial.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                <Button className="bg-cyan-700 hover:bg-cyan-800 text-white h-14 px-8 text-base rounded-none transition-all hover:scale-105 font-bold">
+                 <Link href="/solucoes">
                  Conhecer soluções
+                 </Link>
                </Button>
                <Button variant="outline" className="border-slate-500 text-white hover:bg-white hover:text-slate-900 h-14 px-8 text-base rounded-none bg-transparent transition-all font-bold">
+                 <Link href="/contato">
                  Fale com um especialista
+                 </Link>
                </Button>
             </div>
          </div>

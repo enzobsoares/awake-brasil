@@ -396,7 +396,7 @@ export default function QuemSomosPage() {
             </h2>
             <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
               Se você deseja conhecer como o Grupo Awake Brasil pode apoiar na
-              <b>gestão, administração e regularização patrimonial de imóveis</b>,
+              <b> gestão, administração e regularização patrimonial de imóveis</b>,
               agende uma conversa com nossa equipe técnica e receba uma análise
               especializada das suas necessidades.
             </p>

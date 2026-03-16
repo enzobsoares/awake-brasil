@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import Link from "next/link"
 
 // Animações
 const fadeInUp = {
@@ -38,7 +39,7 @@ export default function ContatoPage() {
       icon: Phone,
       title: 'Telefone / WhatsApp',
       lines: [
-        'Filial SC: (48) 3209-2800',
+        'Matriz SC: (48) 3209-2800',
         'Filial SP: (11) 91698-6787',
       ],
     },
@@ -133,7 +134,9 @@ export default function ContatoPage() {
               <div className="pt-4">
                  <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-14 text-lg shadow-md" size="lg">
                     <MessageSquare className="mr-2 h-5 w-5" />
+                    <Link href="https://wa.me/5511916986787">
                     Falar no WhatsApp
+                    </Link>
                  </Button>
               </div>
             </motion.div>

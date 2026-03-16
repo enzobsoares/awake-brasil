@@ -109,69 +109,87 @@ export default function LeiloesPage() {
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-cyan-500/30 pt-16">
       
       {/* 1. HERO SECTION */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            
-            <motion.div 
-              {...slideInLeft}
-              className="lg:w-1/2 space-y-8 relative z-10"
+<section className="relative py-24 lg:py-32 overflow-hidden bg-white">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row gap-16 items-center">
+      
+      <motion.div 
+        {...slideInLeft}
+        className="lg:w-1/2 space-y-8 relative z-10"
+      >
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 border-l-4 border-cyan-500 bg-slate-50 text-slate-900 text-sm font-bold uppercase tracking-wider">
+            Gestão e Valorização Patrimonial
+          </div>
+          
+          <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight">
+            Gestão estratégica de ativos imobiliários com <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-800">potencial de valorização</span>
+          </h1>
+
+          <h2 className="text-2xl lg:text-3xl font-medium text-slate-700 leading-snug">
+            Cuidamos, estruturamos e valorizamos ativos imobiliários ao longo de todo o seu ciclo patrimonial.
+          </h2>
+        </div>
+        
+        <div className="space-y-6 text-lg text-slate-600 leading-relaxed max-w-2xl">
+          <p>
+            O <strong>Grupo AWAKE Brasil</strong> atua de forma independente na gestão, organização e administração patrimonial de ativos imobiliários, com foco na preservação, regularização documental e manutenção contínua dos imóveis sob sua gestão.
+          </p>
+
+          <p>
+            Nossa atuação é direcionada a garantir que cada ativo permaneça regularizado, bem conservado e estrategicamente estruturado, mantendo sua documentação, condições operacionais e aspectos técnicos sempre em conformidade. Esse cuidado permanente contribui para a valorização progressiva dos imóveis e para uma gestão patrimonial eficiente ao longo de todo o seu ciclo dentro da carteira.
+          </p>
+
+          <p>
+            Como parte do ecossistema do grupo, a <strong>AWAKE Leilões</strong> é a empresa especializada em leilões imobiliários judiciais, extrajudiciais e oportunidades de venda direta, reunindo ativos frequentemente disponibilizados abaixo do valor de mercado.
+          </p>
+
+          <p>
+            Para investidores e interessados em acompanhar essas oportunidades, disponibilizamos acesso à plataforma da AWAKE Leilões, onde é possível conhecer os imóveis disponíveis e participar das oportunidades de aquisição.
+          </p>
+        </div>
+
+        <div className="pt-4 space-y-6">
+          <p className="text-slate-900 font-semibold italic text-lg border-l-2 border-slate-200 pl-4">
+            "Oportunidades selecionadas para investidores e compradores atentos ao mercado imobiliário."
+          </p>
+          
+          <div className="flex flex-wrap gap-4">
+            <Button 
+              size="lg" 
+              className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-10 h-16 text-base font-bold shadow-2xl transition-all hover:scale-[1.02]" 
+              onClick={() => setIsModalOpen(true)}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 border-l-4 border-cyan-500 bg-slate-50 text-slate-900 text-sm font-bold uppercase tracking-wider">
-                Mercado de ativos imobiliários
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Ativos com potencial de valorização <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-800">estruturada.</span>
-              </h1>
-              
-              <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
-                Se você tem interesse em conhecer oportunidades relacionadas a imóveis disponibilizados
-                em leilões, existem plataformas e empresas especializadas dedicadas exclusivamente a
-                essa finalidade.
-              </p>
-
-              <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
-                O Grupo Awake Brasil atua de forma independente, concentrando-se na gestão,
-                regularização e administração patrimonial de ativos imobiliários, não realizando
-                intermediação, captação ou operação de leilões.
-              </p>
-
-              <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
-                O acesso abaixo é disponibilizado apenas como referência informativa, direcionando
-                para ambiente externo operado por empresa autônoma, sem vínculo societário ou
-                operacional com o Grupo Awake Brasil.
-              </p>
-
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-8 h-14 text-base font-bold shadow-xl" onClick={() => setIsModalOpen(true)}>
-                   Acessar plataforma externa de leilões
-                </Button>
-              </div>
-            </motion.div>
-
-            {/* Imagem Hero Estilizada */}
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1 }}
-               className="lg:w-1/2 relative"
-            >
-               <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Martelo de Leilão e Documentos" 
-                    fill 
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent mix-blend-multiply" />
-               </div>
-               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-cyan-500 z-[-1]" />
-            </motion.div>
-
+              Acessar plataforma de leilões
+            </Button>
           </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Imagem Hero Estilizada */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="lg:w-1/2 relative"
+      >
+        <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden shadow-2xl">
+          <Image 
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop" 
+            alt="Edificações modernas e gestão de ativos" 
+            fill 
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent mix-blend-multiply" />
+        </div>
+        {/* Elemento Decorativo */}
+        <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/10 z-[-1] rounded-full blur-2xl" />
+        <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-cyan-500 z-[-1]" />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* 2. POR QUE CONTAR COM O GRUPO AWAKE */}
       <section className="py-24 bg-[#0f172a] text-white">
