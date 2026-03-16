@@ -13,7 +13,7 @@ export function ExternalLinkWarningModal({ isOpen, onClose }: ExternalLinkWarnin
   
   const handleContinue = () => {
     // SUBSTITUA PELO LINK REAL DA PLATAFORMA DE LEILÕES
-    window.open('https://www.portaldeleiloes.com.br', '_blank') 
+    window.open('https://www.awakeleiloes.com.br', '_blank') 
     onClose()
   }
 

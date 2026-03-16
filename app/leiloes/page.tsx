@@ -160,7 +160,9 @@ export default function LeiloesPage() {
               className="bg-slate-900 hover:bg-slate-800 text-white rounded-none px-10 h-16 text-base font-bold shadow-2xl transition-all hover:scale-[1.02]" 
               onClick={() => setIsModalOpen(true)}
             >
+              
               Acessar plataforma de leilões
+              
             </Button>
           </div>
         </div>
