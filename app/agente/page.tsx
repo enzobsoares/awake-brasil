@@ -12,9 +12,10 @@ import {
   FileText, 
   ShieldCheck, 
   Send,
-  UserCheck
+  UserCheck,
+  CheckCircle2
 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 // Animações
@@ -37,10 +38,39 @@ export default function AgentePage() {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Candidatura enviada:', formData)
-    // Integração com API
+    setIsSubmitting(true)
+    setIsSuccess(false) // Limpa o estado antes de tentar enviar
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'credenciamento', // Identificador que a nossa API usa
+          data: formData
+        }),
+      })
+
+      if (response.ok) {
+        setIsSuccess(true)
+        // Limpa os campos após o envio
+        setFormData({ name: '', company: '', city: '', state: '', phone: '', email: '', experience: '', message: '' })
+      } else {
+        alert('Erro ao enviar candidatura. Tente novamente.')
+      }
+    } catch (error) {
+      console.error(error)
+      alert('Erro de conexão. Verifique sua internet.')
+    } finally {
+      setIsSubmitting(false)
+      // Remove a mensagem de sucesso da tela após 4 segundos
+      setTimeout(() => setIsSuccess(false), 4000)
+    }
   }
 
   // --- NOVOS TEXTOS: Responsabilidades ---
@@ -117,7 +147,7 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 2. INTRODUÇÃO E RESPONSABILIDADES (Atualizado) */}
+      {/* 2. INTRODUÇÃO E RESPONSABILIDADES */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -180,7 +210,7 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 3. BENEFÍCIOS (Atualizado) */}
+      {/* 3. BENEFÍCIOS */}
       <section className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -213,8 +243,6 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* (SEÇÃO PERFIL IDEAL FOI REMOVIDA AQUI) */}
-
       {/* 4. PROCESSO DE CREDENCIAMENTO */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -242,11 +270,32 @@ export default function AgentePage() {
         </div>
       </section>
 
-      {/* 5. FORMULÁRIO DE CANDIDATURA (Atualizado) */}
+      {/* 5. FORMULÁRIO DE CANDIDATURA */}
       <section className="py-24 bg-slate-50 border-t border-slate-200" id="candidatura">
         <div className="container mx-auto px-4 max-w-3xl">
-          <Card className="shadow-2xl border-t-4 border-t-cyan-500">
-            <CardContent className="p-8 md:p-12">
+          <Card className="shadow-2xl border-t-4 border-t-cyan-500 relative overflow-hidden">
+            
+            {/* Feedback de Sucesso */}
+            <AnimatePresence>
+              {isSuccess && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 z-30 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-12"
+                >
+                  <div className="w-20 h-20 rounded-full bg-cyan-100 flex items-center justify-center mb-6">
+                    <CheckCircle2 className="h-10 w-10 text-cyan-600" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2">Candidatura Enviada!</h3>
+                  <p className="text-slate-600 max-w-md">
+                    Recebemos suas informações com sucesso. Nossa equipe analisará seu perfil e entrará em contato em breve.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <CardContent className="p-8 md:p-12 relative z-10">
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Candidatura de Parceiro</h2>
                 <p className="text-slate-600">
@@ -258,33 +307,33 @@ export default function AgentePage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label>Nome Completo *</Label>
-                    <Input placeholder="Seu nome" required onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                    <Input placeholder="Seu nome" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                   </div>
                   <div className="space-y-2">
                     <Label>Empresa (Opcional)</Label>
-                    <Input placeholder="Nome da empresa" onChange={(e) => setFormData({...formData, company: e.target.value})} />
+                    <Input placeholder="Nome da empresa" value={formData.company} onChange={(e) => setFormData({...formData, company: e.target.value})} />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label>Cidade *</Label>
-                    <Input placeholder="Sua cidade" required onChange={(e) => setFormData({...formData, city: e.target.value})} />
+                    <Input placeholder="Sua cidade" required value={formData.city} onChange={(e) => setFormData({...formData, city: e.target.value})} />
                   </div>
                   <div className="space-y-2">
                     <Label>Estado *</Label>
-                    <Input placeholder="UF" maxLength={2} required onChange={(e) => setFormData({...formData, state: e.target.value})} />
+                    <Input placeholder="UF" maxLength={2} required value={formData.state} onChange={(e) => setFormData({...formData, state: e.target.value})} />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label>Telefone / WhatsApp *</Label>
-                    <Input placeholder="(00) 00000-0000" type="tel" required onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+                    <Input placeholder="(00) 00000-0000" type="tel" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} />
                   </div>
                   <div className="space-y-2">
                     <Label>E-mail *</Label>
-                    <Input placeholder="seu@email.com" type="email" required onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                    <Input placeholder="seu@email.com" type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
                   </div>
                 </div>
 
@@ -293,13 +342,25 @@ export default function AgentePage() {
                   <Textarea 
                     placeholder="Breve histórico profissional, área de atuação ou forma como deseja colaborar com o Grupo Awake Brasil." 
                     required 
+                    value={formData.experience}
                     onChange={(e) => setFormData({...formData, experience: e.target.value})} 
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm">
-                  Enviar Credenciamento
-                  <Send className="ml-2 h-5 w-5" />
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  disabled={isSubmitting}
+                  className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm shadow-md transition-all hover:-translate-y-1 disabled:opacity-70 flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      Enviar Credenciamento
+                      <Send className="h-5 w-5" />
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

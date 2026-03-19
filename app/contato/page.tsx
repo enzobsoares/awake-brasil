@@ -1,14 +1,13 @@
 'use client'
 
-import React from "react"
+import React, { useState } from "react"
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from "next/link"
 
 // Animações
@@ -28,10 +27,39 @@ export default function ContatoPage() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // ESTADOS QUE ESTAVAM FALTANDO:
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Aqui você integraria com sua API de envio de email
+    setIsSubmitting(true)
+    setIsSuccess(false) // Limpa o estado antes de enviar
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'contato', // Identifica qual form está chamando
+          data: formData
+        }),
+      })
+
+      if (response.ok) {
+        setIsSuccess(true)
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+      } else {
+        alert('Erro ao enviar mensagem. Tente novamente.')
+      }
+    } catch (error) {
+      console.error(error)
+      alert('Erro de conexão. Verifique sua internet.')
+    } finally {
+      setIsSubmitting(false)
+      // Oculta a mensagem de sucesso após 4 segundos e volta o formulário
+      setTimeout(() => setIsSuccess(false), 4000)
+    }
   }
 
   const contactInfo = [
@@ -130,12 +158,12 @@ export default function ContatoPage() {
                 ))}
               </div>
 
-              {/* Botão extra para WhatsApp (opcional, mas recomendado pelo texto) */}
+              {/* Botão extra para WhatsApp */}
               <div className="pt-4">
-                 <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-14 text-lg shadow-md" size="lg">
-                    <MessageSquare className="mr-2 h-5 w-5" />
-                    <Link href="https://wa.me/5511916986787">
-                    Falar no WhatsApp
+                 <Button asChild className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-14 text-lg shadow-md" size="lg">
+                    <Link href="https://wa.me/5511916986787" target="_blank" rel="noopener noreferrer">
+                      <MessageSquare className="mr-2 h-5 w-5" />
+                      Falar no WhatsApp
                     </Link>
                  </Button>
               </div>
@@ -146,11 +174,32 @@ export default function ContatoPage() {
                initial={{ opacity: 0, x: 30 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="lg:col-span-3"
+               className="lg:col-span-3 relative"
             >
-              <Card className="border border-slate-200 shadow-xl bg-white rounded-sm overflow-hidden">
+              <Card className="border border-slate-200 shadow-xl bg-white rounded-sm overflow-hidden h-full">
                 <div className="h-2 w-full bg-cyan-600" />
-                <CardContent className="p-8 md:p-10">
+                
+                {/* Feedback de Sucesso Elegante (AnimatePresence) */}
+                <AnimatePresence>
+                  {isSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute inset-0 z-30 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-12"
+                    >
+                      <div className="w-20 h-20 rounded-full bg-cyan-100 flex items-center justify-center mb-6">
+                        <CheckCircle2 className="h-10 w-10 text-cyan-600" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-slate-900 mb-2">Mensagem Enviada!</h3>
+                      <p className="text-slate-600 max-w-sm">
+                        Agradecemos o contato. Nossa equipe analisará sua mensagem e retornará em breve.
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <CardContent className="p-8 md:p-10 relative z-10">
                   <div className="mb-8">
                      <h3 className="text-2xl font-bold text-slate-900">Envie uma Mensagem</h3>
                      <p className="text-slate-600 mt-2">Preencha o formulário abaixo ou envie-nos um e-mail. Retornaremos o mais breve possível.</p>
@@ -222,9 +271,20 @@ export default function ContatoPage() {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm shadow-md transition-all hover:-translate-y-1">
-                      Solicitar Contato
-                      <Send className="ml-2 h-5 w-5" />
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      disabled={isSubmitting}
+                      className="w-full h-14 text-lg font-bold bg-cyan-700 hover:bg-cyan-800 text-white rounded-sm shadow-md transition-all hover:-translate-y-1 disabled:opacity-70 flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          Solicitar Contato
+                          <Send className="h-5 w-5" />
+                        </>
+                      )}
                     </Button>
 
                     <p className="text-xs text-slate-400 text-center mt-4">

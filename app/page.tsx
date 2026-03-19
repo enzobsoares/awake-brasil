@@ -226,7 +226,7 @@ valorização patrimonial.
 
         {/* SLIDE 2 - ITEM REMOVIDO AQUI */}
         <div className="flex-[0_0_85%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.33%]">
-          <Link href="/investidor" className="group block h-full p-10 bg-[#1e293b] text-white transition-all text-center relative shadow-2xl hover:shadow-cyan-900/20 top-0 hover:-top-2 duration-300 border-t-4 border-cyan-500 rounded-sm">
+          <Link href="/solucoes" className="group block h-full p-10 bg-[#1e293b] text-white transition-all text-center relative shadow-2xl hover:shadow-cyan-900/20 top-0 hover:-top-2 duration-300 border-t-4 border-cyan-500 rounded-sm">
               <div className="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
                 <TrendingUp className="w-8 h-8 text-cyan-400" />
               </div>

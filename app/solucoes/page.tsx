@@ -173,7 +173,7 @@ export default function SolucoesPage() {
                 </div>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Regularização de alvarás de funcionamento
+                   Regularização de Empresas
                 </h2>
                 
                 <p className="text-lg text-slate-300 leading-relaxed mb-8">
@@ -186,7 +186,8 @@ export default function SolucoesPage() {
                     "Regularização de pendências jurídicas, fiscais e administrativas",
                     "Organização contábil e controle de obrigações legais",
                     "Estruturação societária e suporte estratégico",
-                    "Acompanhamento contínuo para manutenção da conformidade"
+                    "Acompanhamento contínuo para manutenção da conformidade",
+                    "Regularização de alvarás de funcionamento"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-300">
                       <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-1" />

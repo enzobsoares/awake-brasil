@@ -53,7 +53,7 @@ export default function PrivacidadePage() {
             {/* Introdução */}
             <motion.div {...fadeInUp} className="prose prose-slate max-w-none">
               <p className="text-lg text-slate-600 leading-relaxed">
-                A <strong>Awake Brasil</strong> tem o compromisso de respeitar a sua privacidade e garantir o sigilo de todas as informações que você nos fornece. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+                O <strong>Grupo Awake Brasil</strong> tem o compromisso de respeitar a sua privacidade e garantir o sigilo de todas as informações que você nos fornece. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
               </p>
             </motion.div>
 

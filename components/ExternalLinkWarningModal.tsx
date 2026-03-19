@@ -57,7 +57,7 @@ export function ExternalLinkWarningModal({ isOpen, onClose }: ExternalLinkWarnin
             {/* Corpo do Texto */}
             <div className="p-6 space-y-4">
               <p className="text-slate-600 leading-relaxed text-sm">
-                Ao prosseguir, você será redirecionado para ambiente digital de terceiros, cuja operação é <strong>autônoma</strong> e <strong>não possui vínculo</strong> com o Grupo Awake Brasil.
+                Ao prosseguir, você será redirecionado para a plataforma de Awake Leilões.
               </p>
             </div>
 

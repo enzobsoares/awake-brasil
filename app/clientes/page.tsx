@@ -48,7 +48,7 @@ export default function ClientesPage() {
       icon: TrendingUp,
       title: "Gestores Patrimoniais e Estruturas Corporativas",
       description:
-        "Grupos econômicos, holdings e estruturas patrimoniais que demandam controle, transparência, auditoria e governança na administração de ativos imobiliários, assegurando organização, preservação de valor e performance patrimonial",
+        "Grupos econômicos, holdings e estruturas patrimoniais que demandam controle, transparência, auditoria e governança na administração de ativos imobiliários, assegurando organização, preservação de valor e performance patrimonial.",
     },
   ];
 
