@@ -58,6 +58,7 @@ export default function SolucoesPage() {
     { title: "Análise de Ocupação", desc: "Suporte jurídico para resolução de pendências de posse." },
     { title: "Adequação Cadastral", desc: "Regularização fiscal e registral para conformidade total." },
     { title: "Preparação do Ativo", desc: "Deixando o imóvel pronto para administração, locação ou venda." },
+    { title: "Usucapião", desc: "Regularização da propriedade por meio da posse prolongada, garantindo segurança jurídica e reconhecimento legal do imóvel." },
   ]
 
   return (
