@@ -173,8 +173,7 @@ export default function QuemSomosPage() {
                 </p>
                 <div className="pl-6 border-l-4 border-cyan-500 bg-slate-50 p-4 rounded-r-lg">
                   <p className="font-medium text-slate-800">
-                    Com sede em Curitiba (PR) e filiais em São Paulo (SP) e
-                    Florianópolis (SC), o Grupo Awake Brasil conta com presença
+                    Com sede em Florianópolis (SC) e filial em São Paulo (SP), o Grupo Awake Brasil conta com presença
                     nacional para escalar operações.
                   </p>
                 </div>
