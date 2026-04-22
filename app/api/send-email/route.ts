@@ -6,16 +6,19 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { type, data } = body;
 
-    // Configuração do servidor SMTP
-    // Estas variáveis DEVEM estar no seu arquivo .env.local
+    // Configuração do servidor SMTP (Ajustado para Locaweb)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: process.env.SMTP_SECURE === 'true', // true para 465, false para outras portas
+      port: Number(process.env.SMTP_PORT) || 465, // A Locaweb usa muito a porta 465
+      secure: process.env.SMTP_SECURE === 'true', // true para 465, false para 587
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      // REGRA CRÍTICA PARA LOCAWEB: Ignorar certificados não autorizados que eles usam internamente
+      tls: {
+        rejectUnauthorized: false 
+      }
     });
 
     let emailHtml = '';
@@ -51,11 +54,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Tipo de formulário inválido' }, { status: 400 });
     }
 
-    // Configura o envio (De quem para quem)
+    // Configura o envio
     const mailOptions = {
-      from: `Contato Site <${process.env.SMTP_USER}>`, // E-mail que autentica no servidor
-      to: 'contato@grupoawakebrasil.com', // E-mail do cliente (onde ele vai receber)
-      replyTo: data.email, // Quando o cliente clicar em "Responder", vai para o email de quem preencheu
+      // OBRIGATÓRIO NA LOCAWEB: O e-mail dentro dos < > deve ser idêntico ao process.env.SMTP_USER
+      from: `"Site Awake Brasil" <${process.env.SMTP_USER}>`, 
+      to: 'contato@grupoawakebrasil.com', // E-mail onde a equipe da Awake vai receber
+      replyTo: data.email, // Se a equipe clicar em "Responder", vai para o cliente
       subject: emailSubject,
       html: emailHtml,
     };
